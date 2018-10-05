@@ -7,28 +7,28 @@
       "status": 1,
       "title": "should have expected title label",
       "fullTitle": "Test started... should have expected title label",
-      "duration": 0.43,
+      "duration": 0.18,
       "error": null
     },
     {
       "status": 1,
       "title": "should have expected title",
       "fullTitle": "Test started... should have expected title",
-      "duration": 0.1,
+      "duration": 0.06,
       "error": null
     },
     {
       "status": 1,
       "title": "should have expected description label",
       "fullTitle": "Test started... should have expected description label",
-      "duration": 0.2,
+      "duration": 0.06,
       "error": null
     },
     {
       "status": 1,
       "title": "should have expected description",
       "fullTitle": "Test started... should have expected description",
-      "duration": 0.1,
+      "duration": 0.08,
       "error": null
     }
   ],
@@ -36,8 +36,8 @@
     "tests": 4,
     "pending": 0,
     "failures": 0,
-    "duration": 1.91,
-    "timeStart": 1538669743830,
-    "timeStop": 1538669745741
+    "duration": 0.75,
+    "timeStart": 1538751167680,
+    "timeStop": 1538751168433
   }
 }

@@ -1,9 +1,5 @@
-var Page = require('astrolabe').Page;
-
-module.exports = Page.create({
-	getTestObj: {
-		value: function (testHook) {
-			return $('[data-test-hook="'+ testHook +'"]');
-		}
+module.exports = Object.create({
+	getTestObj: function (testHook) {
+		return browser.driver.findElement(by.css('[data-test-hook="'+ testHook +'"]'));
 	}
 });

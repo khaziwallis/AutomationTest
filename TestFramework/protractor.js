@@ -7,8 +7,7 @@
 //require('it-each')({ testPerIteration: true });
 
 exports.setupTestGlobals = () => {
-    _ = require('rx-page-objects/node_modules/lodash');
-    moment = require('rx-page-objects/node_modules/moment');
+    _ = require('lodash');
     momentTz = require('moment-timezone');
     expect = require('chai').use(require('chai-as-promised')).expect;
     navigation = require('./pages/navigation.page');
@@ -18,7 +17,6 @@ exports.setupTestGlobals = () => {
 
 exports.config = {
     framework: 'mocha',
-
     // The address of a running selenium server. If this is specified,
     // seleniumServerJar and seleniumPort will be ignored.
     seleniumAddress: 'http://localhost:4444/wd/hub',
@@ -34,10 +32,6 @@ exports.config = {
     },
 
     suite: 'default',
-
-    params: {
-        
-    },
 
     onPrepare: () => {
         browser.driver.manage().window().setSize(1366, 768);

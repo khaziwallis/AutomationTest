@@ -23,10 +23,10 @@ describe('Test started...', function () {
     }];
 
 	before(function () {
-		navigation.go(testSuites[0].url);
+        browser.driver.get(testSuites[0].url);
 	});
 
-	_.each(testSuites[0].expectedTests, function (testSuite) {
+	testSuites[0].expectedTests.forEach(function (testSuite) {
 		it(testSuite.message, function () {
 			var testObj = initlize.getTestObj(testSuite.testHook);
 			expect(testObj.getText()).to.eventually.eql(testSuite.expected);
