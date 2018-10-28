@@ -29723,6 +29723,35 @@ module.exports = require('./lib/React');
 
 var React = require('react');
 
+var Header = React.createClass({displayName: "Header",
+	render: function () {
+		return (
+			React.createElement("div", null, 
+				React.createElement("div", {"data-test-hook": "title"}, 
+					React.createElement("span", {"data-test-hook": "title-label"}, "Title: "), 
+					React.createElement("span", {"data-test-hook": "title-value"}, "Common Title"), 
+					React.createElement("img", {src: "favicon.ico"})
+				), 
+
+				React.createElement("div", null, 
+					React.createElement("ul", {className: "nav navbar-nav"}, 
+						React.createElement("li", null, React.createElement("a", {href: "/"}, "Home")), 
+						React.createElement("li", null, React.createElement("a", {href: "/#about"}, "About"))
+					)
+				)
+			)
+
+		);
+	}
+});
+
+module.exports = Header;
+
+},{"react":157}],159:[function(require,module,exports){
+"use strict";
+
+var React = require('react');
+
 var About = React.createClass({displayName: "About",
 	render: function () {
 		return (
@@ -29752,35 +29781,6 @@ var About = React.createClass({displayName: "About",
 });
 
 module.exports = About;
-
-},{"react":157}],159:[function(require,module,exports){
-"use strict";
-
-var React = require('react');
-
-var Header = React.createClass({displayName: "Header",
-	render: function () {
-		return (
-			React.createElement("div", null, 
-				React.createElement("div", {"data-test-hook": "title"}, 
-					React.createElement("span", {"data-test-hook": "title-label"}, "Title: "), 
-					React.createElement("span", {"data-test-hook": "title-value"}, "Common Title"), 
-					React.createElement("img", {src: "favicon.ico"})
-				), 
-
-				React.createElement("div", null, 
-					React.createElement("ul", {className: "nav navbar-nav"}, 
-						React.createElement("li", null, React.createElement("a", {href: "/"}, "Home")), 
-						React.createElement("li", null, React.createElement("a", {href: "/#about"}, "About"))
-					)
-				)
-			)
-
-		);
-	}
-});
-
-module.exports = Header;
 
 },{"react":157}],160:[function(require,module,exports){
 "use strict";
@@ -29820,9 +29820,9 @@ module.exports = Home;
 },{"react":157}],161:[function(require,module,exports){
 $ = JQuery = require('jquery');
 var React = require('react');
-var Home = require('./components/homePage');
-var About = require('./components/about/aboutPage');
-var Header = require('./components/common/header');
+var Home = require('./containers/home/homePage');
+var About = require('./containers/about/aboutPage');
+var Header = require('./components/header');
 
 (function (win) {
 	"use strict";
@@ -29858,6 +29858,4 @@ var Header = require('./components/common/header');
 
 })(window);
 
-//React.render(<Home />, document.getElementById('app'));
-
-},{"./components/about/aboutPage":158,"./components/common/header":159,"./components/homePage":160,"jquery":1,"react":157}]},{},[161]);
+},{"./components/header":158,"./containers/about/aboutPage":159,"./containers/home/homePage":160,"jquery":1,"react":157}]},{},[161]);

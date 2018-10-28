@@ -25,7 +25,7 @@ var config = {
 		dist: './dist',
 		js: './src/**/*.js',
 		images: './src/images/*',
-		mainJs: './src/main.js',
+		mainJs: './src/index.js',
 		css: [
 			'node_modules/bootstrap/dist/css/bootstrap.min.css',
 			'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
@@ -53,7 +53,7 @@ gulp.task('images', function () {
 gulp.task('open', ['connect'], function () {
 	gulp.src('dist/index.html')
 		.pipe(open({
-			url: config.devBaseUrl + ':' + config.port + '/'
+			uri: config.devBaseUrl + ':' + config.port + '/'
 		}));
 });
 
