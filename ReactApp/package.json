@@ -12,30 +12,40 @@
   "keywords": [
     "gulp",
     "setup",
-    "react"
+    "react",
+    "stubby",
+    "mock"
   ],
   "bugs": {
     "url": "https://github.com/khaziwallis/ReactApp/issues"
   },
   "homepage": "https://github.com/khaziwallis/ReactApp",
   "dependencies": {
-    "gulp": "^3.9.0",
-    "gulp-connect": "^2.2.0",
-    "gulp-open": "^1.0.0",
     "bootstrap": "^3.3.5",
+    "fs-extra": "^5.0.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babelify": "^10.0.0",
     "browserify": "^11.0.1",
-    "flux": "^2.0.3",
-    "gulp-concat": "^2.6.0",
-    "gulp-eslint": "^0.15.0",
-    "jquery": "^2.1.4",
-    "react": "^0.13.3",
-    "react-router": "^0.13.3",
-    "reactify": "^1.1.1",
-    "vinyl-source-stream": "^1.1.0",
+    "gulp": "^3.9.0",
     "gulp-concat": "^2.6.1",
+    "gulp-connect": "^2.2.0",
+    "gulp-eslint": "^0.15.0",
     "gulp-load-plugins": "^1.5.0",
+    "gulp-open": "^1.0.0",
+    "gulp-sass": "^4.0.2",
     "gulp-shell": "^0.6.5",
     "gulp-yaml": "^2.0.2",
-    "stubby": "^4.0.0"
+    "node-sass": "^4.9.4",
+    "react-hot-loader": "^4.3.11",
+    "stubby": "^4.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

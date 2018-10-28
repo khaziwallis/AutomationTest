@@ -5,13 +5,17 @@ var connect = require('gulp-connect');// run local dev server
 var open = require('gulp-open');//open url in web browser
 
 var browserify = require('browserify'); // bundeler js
-var reactify = require('reactify'); // Transform React JSX to plain js
+//var reactify = require('reactify'); // Transform React JSX to plain js
 var source = require('vinyl-source-stream'); // allow us to use conventinal text stream with gulp
 
 var concat = require('gulp-concat'); // concats files
 var lint = require('gulp-eslint'); // Lint Js Files, inculding jsx
 
 var plugins = require('gulp-load-plugins')();
+
+var babelify = require('babelify');
+
+var sass = require('gulp-sass');
 
 var startStubby = function () {
     gulp.src('').pipe(plugins.shell(['node_modules/stubby/bin/stubby -mw -d mocks.json -l localhost -s 3000']));
@@ -63,6 +67,21 @@ gulp.task('html', function () {
 		.pipe(connect.reload());
 });
 
+var extensions = ['.js', '.json', '.es6', '.jsx'];
+
+gulp.task('compile', function(){
+  browserify(config.paths.mainJs)
+    .transform(babelify.configure({
+	    extensions: extensions,
+	    presets: ['@babel/preset-env', '@babel/preset-react']
+	}))
+    .bundle()
+    .on('error', console.error.bind(console))
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest(config.paths.dist + '/scripts'))
+    .pipe(connect.reload());
+});
+/*
 gulp.task('js', function () {
 	browserify(config.paths.mainJs)
 		.transform(reactify)
@@ -72,11 +91,18 @@ gulp.task('js', function () {
 		.pipe(gulp.dest(config.paths.dist + '/scripts'))
 		.pipe(connect.reload());
 });
+*/
 
 gulp.task('css', function () {
 	gulp.src(config.paths.css)
 		.pipe(concat('bundle.css'))
 		.pipe(gulp.dest(config.paths.dist + '/css'));
+});
+
+gulp.task('sass', function () {
+  return gulp.src(config.paths.js)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(config.paths.dist + '/css'));
 });
 
 gulp.task('lint', function () {
@@ -99,8 +125,8 @@ gulp.task('mocks', function () {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('stubbed', ['mocks', 'html', 'js', 'css', 'images', 'open', 'watch'], function () {
+gulp.task('stubbed', ['mocks', 'html', 'compile', 'css', 'images', 'open', 'watch'], function () {
     startStubby();
 });//server:stubbed
 
-gulp.task('default', [ 'html', 'js', 'css', 'images', 'open', 'watch']);
+gulp.task('default', [ 'html', 'compile', 'css', 'images', 'open', 'watch']);

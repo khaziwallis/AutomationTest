@@ -1,40 +1,33 @@
-$ = JQuery = require('jquery');
-var React = require('react');
-var Home = require('./containers/home/homePage');
-var About = require('./containers/about/aboutPage');
-var Header = require('./components/header');
+/* eslint-disable import/no-extraneous-dependencies */
+/*
+  issue with react-hot-loader
+  eventhough those 2 dependencies are only used in development
+  eslint has no way to tell that and outputs an error
+*/
 
-(function (win) {
-	"use strict";
+// react dependencies
+import React from 'react';
+import ReactDOM from 'react-dom';
+// hot reload for development
+import { AppContainer } from 'react-hot-loader';
 
-	var App = React.createClass({
-		render: function () {
-			var Child;
+import App from './App';
 
-			switch (this.props.route) {
-				case 'about':
-					Child = About;
-					break;
-				default:
-					Child = Home;
-			}
+import './style.scss';
 
-			return (
-				<div>
-					<Header/>
-					<Child/>
-				</div>
-			);
-		}
-	});
+const root = document.getElementById('root');
 
-	function render () {
-		var route = win.location.hash.substr(1);
-		React.render(<App route={route} />, document.getElementById('app'));
-	};
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    root,
+  );
+};
 
-	win.addEventListener('hashchange', render);
-	render();
+render(App);
 
-})(window);
-
+if (module.hot) {
+  module.hot.accept('./App', () => { render(App); });
+}
