@@ -11,6 +11,12 @@ var source = require('vinyl-source-stream'); // allow us to use conventinal text
 var concat = require('gulp-concat'); // concats files
 var lint = require('gulp-eslint'); // Lint Js Files, inculding jsx
 
+var plugins = require('gulp-load-plugins')();
+
+var startStubby = function () {
+    gulp.src('').pipe(plugins.shell(['node_modules/stubby/bin/stubby -mw -d mocks.json -l localhost -s 3000']));
+};
+
 var config = {
 	port: 9000,
 	devBaseUrl: 'http://localhost',
@@ -18,6 +24,7 @@ var config = {
 		html: './src/**/*.html',
 		dist: './dist',
 		js: './src/**/*.js',
+		images: './src/images/*',
 		mainJs: './src/main.js',
 		css: [
 			'node_modules/bootstrap/dist/css/bootstrap.min.css',
@@ -32,6 +39,15 @@ gulp.task('connect', function () {
 		base: config.devBaseUrl,
 		liveload: true
 	});
+});
+
+gulp.task('images', function () {
+	gulp.src(config.paths.images)
+		.pipe(gulp.dest(config.paths.dist + '/images'))
+		.pipe(connect.reload());
+	// publist favicon
+	gulp.src('./src/favicon.ico')
+		.pipe(gulp.dest(config.paths.dist));
 });
 
 gulp.task('open', ['connect'], function () {
@@ -76,4 +92,15 @@ gulp.task('watch', function () {
 	gulp.watch(config.paths.js, ['js']);
 });
 
-gulp.task('default', [ 'html', 'js', 'css', 'open', 'watch']);
+gulp.task('mocks', function () {
+    return gulp.src('./api-mocks/**/*.yaml')
+        .pipe(plugins.concat('mocks.json'))
+        .pipe(plugins.yaml({ space: 2 }))
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('stubbed', ['mocks', 'html', 'js', 'css', 'images', 'open', 'watch'], function () {
+    startStubby();
+});//server:stubbed
+
+gulp.task('default', [ 'html', 'js', 'css', 'images', 'open', 'watch']);

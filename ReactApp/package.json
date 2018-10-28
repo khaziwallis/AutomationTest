@@ -31,6 +31,11 @@
     "react": "^0.13.3",
     "react-router": "^0.13.3",
     "reactify": "^1.1.1",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-shell": "^0.6.5",
+    "gulp-yaml": "^2.0.2",
+    "stubby": "^4.0.0"
   }
 }
