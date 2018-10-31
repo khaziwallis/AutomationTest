@@ -6,28 +6,31 @@
 */
 
 // react dependencies
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 // hot reload for development
-import { AppContainer } from 'react-hot-loader';
+import { AppContainer } from "react-hot-loader";
+import App from "./App";
+import "./style.scss";
+import "bootstrap/dist/css/bootstrap.css";
 
-import App from './App';
+ReactDOM.render(<App />, document.getElementById("root"));
 
-import './style.scss';
+// const root = document.getElementById("root");
 
-const root = document.getElementById('root');
+// const render = Component => {
+//   ReactDOM.render(
+//     <AppContainer>
+//       <Component />
+//     </AppContainer>,
+//     root
+//   );
+// };
 
-const render = (Component) => {
-  ReactDOM.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
-    root,
-  );
-};
+// render(App);
 
-render(App);
-
-if (module.hot) {
-  module.hot.accept('./App', () => { render(App); });
-}
+// if (module.hot) {
+//   module.hot.accept("./App", () => {
+//     render(App);
+//   });
+// }

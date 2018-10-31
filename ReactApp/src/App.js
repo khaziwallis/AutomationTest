@@ -1,27 +1,18 @@
-import React from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
-
-import Routes from './Routes';
+import React from "react";
+import { BrowzerRouter, Route, Switch } from "react-router-dom";
+import Error from "./components/error";
+import Home from "./components/home";
+import LoginPage from "./components/login";
 
 //import reactLogo from './favicon.ico';
 
 const App = () => (
   <BrowserRouter>
-    <main className="container">
-      <div>
-        <h1>hello world!</h1>
-        <p>If you see this everything is working!</p>
-      </div>
-      <ul className="left">
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/about'>About</Link>
-        </li>
-      </ul>
-      <Routes />
-    </main>
+    <Switch>
+      <Route path="/login" component={LoginPage} exact />
+      <Route path="/home" component={Home} />
+      <Route component={Error} />
+    </Switch>
   </BrowserRouter>
 );
 
