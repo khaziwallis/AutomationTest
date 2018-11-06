@@ -6,7 +6,7 @@
        <input type="text" id="username" class="usrname" ng-model = "userName"><br>
        <label>Password</label>
        <input type="password" id="password" class="password" ng-model = "password"><br>
-       <span class="warning" ng-show = "show">Sorry, your credentials don't match!</span>
+       <span class="warning" ng-if = "errorStatus">Sorry, your credentials don't match!</span>
        <button type="button" class="btn" ng-click = "login()">Submit</button>
        </form>
   </div>

@@ -5,8 +5,7 @@ app.controller('HomeController', function ($scope, $location) {
 	$scope.description = 'test description';
 
 	$scope.logout = function(){
-		localStorage.clear();
+		localStorage.clear("token");
 		$location.path('/login');
-	}
-	
+	}	
 });
