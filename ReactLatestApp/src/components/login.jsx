@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./login.css";
-import { withRouter } from "react-router-dom";
+import auth from "./auth";
 
 class LoginPage extends Component {
   constructor() {
@@ -31,7 +31,10 @@ class LoginPage extends Component {
     if (!this.state.password) {
       return this.setState({ error: "Password is required" });
     } else {
-      this.props.history.push("/home");
+      auth.login(() => {
+        this.props.history.push("/home");
+        localStorage.setItem("token", "12345");
+      });
       return this.setState({ error: "" });
     }
   }

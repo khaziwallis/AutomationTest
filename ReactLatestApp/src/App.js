@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
-import decode from "jwt-decode";
 import LoginPage from "./components/login";
 import Home from "./components/home";
-import Error from "./components/error";
+import { ProtectedRoute } from "./components/protected.route";
 
 class App extends Component {
   render() {
@@ -12,8 +11,8 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route path="/" component={LoginPage} exact />
-          <Route path="/home" component={Home} />
-          <Route component={Error} />
+          <ProtectedRoute exact path="/home" component={Home} />
+          <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
       </BrowserRouter>
     );
