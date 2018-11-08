@@ -1,0 +1,13 @@
+<div class = "login-layout">
+  <div class="card-layout">
+    <h1 class="login-heading">Login here!</h1>
+      <form id="loginForm" action="/">
+       <label>Username</label> 
+       <input type="text" id="username" class="usrname" ng-model = "userName"><br>
+       <label>Password</label>
+       <input type="password" id="password" class="password" ng-model = "password"><br>
+       <span class="warning" ng-if = "errorStatus">Sorry, your credentials don't match!</span>
+       <button type="button" class="btn" ng-click = "login()">Submit</button>
+       </form>
+  </div>
+</div>

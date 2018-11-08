@@ -19,7 +19,8 @@ gulp.task('connect', function () {
 
 gulp.task('browserify', function() {
     return browserify(['./app/app.js'
-			,'./app/scripts/HomeController.js'])
+            ,'./app/scripts/LoginController.js', './app/scripts/HomeController.js',
+            './app/scripts/services/login.service.js'])
         .bundle()
         .pipe(source('finalBuild.js'))
         .pipe(gulp.dest('./public/build/'));
