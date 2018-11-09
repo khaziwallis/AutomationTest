@@ -5,11 +5,13 @@ class Auth {
 
   login(cb) {
     this.authenticated = true;
+    localStorage.setItem("token", "12345");
     cb();
   }
 
   logout(cb) {
     this.authenticated = false;
+    localStorage.removeItem("token");
     cb();
   }
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./login.css";
+import "../css/login.css";
 import auth from "./auth";
 
 class LoginPage extends Component {
@@ -33,7 +33,6 @@ class LoginPage extends Component {
     } else {
       auth.login(() => {
         this.props.history.push("/home");
-        localStorage.setItem("token", "12345");
       });
       return this.setState({ error: "" });
     }
@@ -82,11 +81,7 @@ class LoginPage extends Component {
             <h3>{"Log In "}</h3>
           </button>
           {this.state.error && (
-            <h3
-              data-test="error"
-              onClick={this.dismissError}
-              className="error-msg"
-            >
+            <h3 data-test="error" className="error-msg">
               <button
                 className="btn btn-danger btn-sm dismiss-error"
                 onClick={this.dismissError}

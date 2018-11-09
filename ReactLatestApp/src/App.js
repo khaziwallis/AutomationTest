@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
-import LoginPage from "./components/login";
-import Home from "./components/home";
-import { ProtectedRoute } from "./components/protected.route";
+import LoginPage from "./components/JavaScript/login";
+import Home from "./components/JavaScript/home";
+import { ProtectedRoute } from "./Routes/protected.route";
 
 class App extends Component {
   render() {
@@ -11,8 +11,8 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route path="/" component={LoginPage} exact />
-          <ProtectedRoute exact path="/home" component={Home} />
-          <Route path="*" component={() => "404 NOT FOUND"} />
+          <ProtectedRoute path="/home" component={Home} exact />
+          <Route path="*" component={LoginPage} />
         </Switch>
       </BrowserRouter>
     );
