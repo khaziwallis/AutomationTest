@@ -1,5 +1,22 @@
 .logout-btn {
-  float: right;
+  position: absolute;
+  right: 1%;
+}
 
-  margin: 50px 50px 0 0;
+.inp-1,
+.drop-inp {
+  width: 20%;
+}
+
+.tab-1 {
+  width: 35%;
+  position: absolute;
+  right: 17%;
+  left: 33%;
+  border: 1px solid black;
+}
+
+.add-data {
+  position: relative;
+  left: 33%;
 }
