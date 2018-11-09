@@ -1,0 +1,22 @@
+.logout-btn {
+  position: absolute;
+  right: 1%;
+}
+
+.inp-1,
+.drop-inp {
+  width: 20%;
+}
+
+.tab-1 {
+  width: 35%;
+  position: absolute;
+  right: 17%;
+  left: 33%;
+  border: 1px solid black;
+}
+
+.add-data {
+  position: relative;
+  left: 33%;
+}
