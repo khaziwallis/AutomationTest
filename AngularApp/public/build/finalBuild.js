@@ -33,18 +33,31 @@ app.config(function($routeProvider, $locationProvider, $qProvider) {
    }
 })
 
-},{"angular":10,"angular-resource":6,"angular-route":8}],2:[function(require,module,exports){
+},{"angular":11,"angular-resource":7,"angular-route":9}],2:[function(require,module,exports){
 var app = angular.module('app');
 
-app.controller('HomeController', function ($scope, $location) {
+app.controller('HomeController', function ($scope, $location, UserService) {
 	$scope.title = "Test Title";
 	$scope.description = 'test description';
-
+	$scope.user;
+	$scope.userData = [];
 	$scope.logout = function(){
 		localStorage.clear("token");
 		$location.path('/login');
 	}	
+
+	$scope.getUser = function(){
+		UserService.get({}, function(response){
+			$scope.user = response;
+			$scope.userData = response.data;
+			console.log($scope.userData);
+		})
+	}
+
+	$scope.getUser();
+
 });
+
 
 },{}],3:[function(require,module,exports){
 var app = angular.module('app');
@@ -87,6 +100,23 @@ app.factory('loginService', function ($resource) {
 
 
 },{}],5:[function(require,module,exports){
+var app = angular.module("app");
+
+app.config(['$resourceProvider', function ($resourceProvider) {
+  $resourceProvider.defaults.stripTrailingSlashes = false;
+}]);
+
+app.factory('UserService', function ($resource) {
+  return $resource("http://localhost:3000/api/user001", {} , {
+      get: {
+          method: 'GET',
+          isArray: false,
+      }   
+  });
+});
+
+
+},{}],6:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.0
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -856,11 +886,11 @@ angular.module('ngResource', ['ng']).
 
 })(window, window.angular);
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 require('./angular-resource');
 module.exports = 'ngResource';
 
-},{"./angular-resource":5}],7:[function(require,module,exports){
+},{"./angular-resource":6}],8:[function(require,module,exports){
 /**
  * @license AngularJS v1.7.5
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -2128,11 +2158,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":7}],9:[function(require,module,exports){
+},{"./angular-route":8}],10:[function(require,module,exports){
 /**
  * @license AngularJS v1.7.5
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -38354,8 +38384,8 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":9}]},{},[1,3,2,4]);
+},{"./angular":10}]},{},[1,3,2,4,5]);

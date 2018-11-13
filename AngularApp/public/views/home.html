@@ -1,21 +1,40 @@
-<div>
-	<div data-test-hook="title">
-		<span data-test-hook="title-label">Title: </span>
-		<span data-test-hook="title-value">{{title}} </span>
-	</div>
-	<div>
-		<span data-test-hook="description-label">Description: </span>
-		<span data-test-hook="description-value">{{description}}</span>
-	</div>
+<div class="topnav">
+		<a href="#">Hi <span class="red">{{user.name}}</span></a>
+		<p>Your Accion ID : <span class="red">{{user.userid}}</span></p>
+		<button class = "logoutBtn" ng-click = "logout()">Logout</button>
+</div>
+<div class="container">
+		<div data-test-hook="title">
+			<span data-test-hook="title-label">Title: </span>
+			<span data-test-hook="title-value">{{title}} </span>
+		</div>
+		<div>
+			<span data-test-hook="description-label">Description: </span>
+			<span data-test-hook="description-value">{{description}}</span>
+		</div>
 
-	<div>
-		<label>
-			<span data-test-hook="input-label">Input Name</span>
-			<input
-				data-test-hook="input-value"
-				type="name" value="Khazi"
-				name="name" />
-		</label>
-		<button ng-click = "logout()">Logout</button>
-	</div>
+		<div>
+			<label>
+				<span data-test-hook="input-label">Input Name</span>
+				<input
+					data-test-hook="input-value"
+					type="name" value="Khazi"
+					name="name" />
+			</label>
+		</div>
+		<div class="table-layout">
+				<table>
+					<h1>Current Projects</h1>
+						<tr>
+							<th>Project</th>
+							<th>Status</th>
+							<th>Logs</th>
+						</tr>
+						<tr ng-repeat = "i in userData">
+							<td>{{i.project}}</td>
+							<td>{{i.status}}</td>
+							<td>{{i.logs}}</td>
+						</tr>
+					</table>
+		</div>
 </div>
