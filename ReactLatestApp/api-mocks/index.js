@@ -1,4 +1,3 @@
-// api.js
 var API = require("api-stub");
 var config = [
   {
@@ -13,5 +12,3 @@ var config = [
 var server = new API(config);
 
 server.start(5000);
-
-//then run the script `node api.js`
