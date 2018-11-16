@@ -8,7 +8,8 @@ class LoginPage extends Component {
     this.state = {
       username: "",
       password: "",
-      error: ""
+      error: "",
+      token: ""
     };
 
     this.handlePassChange = this.handlePassChange.bind(this);
@@ -31,16 +32,23 @@ class LoginPage extends Component {
     if (!this.state.password) {
       return this.setState({ error: "Password is required" });
     } else {
-      auth.login(() => {
+      const user = {
+        userName: this.state.name,
+        password: this.state.password
+      };
+      var success = () => {
         this.props.history.push("/home");
-      });
+      };
+
+      auth.login(user, success);
       return this.setState({ error: "" });
     }
   }
 
   handleUserChange(evt) {
     this.setState({
-      username: evt.target.value
+      username: evt.target.value,
+      name: evt.target.value
     });
   }
 
