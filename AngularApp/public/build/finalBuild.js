@@ -33,7 +33,55 @@ app.config(function($routeProvider, $locationProvider, $qProvider) {
    }
 })
 
-},{"angular":11,"angular-resource":7,"angular-route":9}],2:[function(require,module,exports){
+},{"angular":12,"angular-resource":8,"angular-route":10}],2:[function(require,module,exports){
+var app = angular.module('app');
+
+app.directive("clickToEdit", function () {
+    var editorTemplate = '' +
+        '<div class="click-to-edit">' +
+            '<div ng-hide="view.editorEnabled">' +
+                '<a class = "dir-btn-edit" ng-click="enableEditor()">{{value}}</a>' +
+            '</div>' +
+            '<div ng-show="view.editorEnabled">' +
+                '<input type="text" ng-model="view.editableValue">' +
+                '<a class="dir-btn-save" href="#" ng-click="save()">Save</a>' +
+                ' or ' +
+                '<a class="dir-btn-cancel" ng-click="disableEditor()">cancel</a>' +
+            '</div>' +
+        '</div>';
+
+    return {
+        restrict: "A",
+        replace: true,
+        template: editorTemplate,
+        scope: {
+            value: "=clickToEdit",
+        },
+        link: function (scope, element, attrs) {
+            scope.view = {
+                editableValue: scope.value,
+                editorEnabled: false
+            };
+            
+            scope.enableEditor = function () {
+                scope.view.editorEnabled = true;
+                scope.view.editableValue = scope.value;
+            };
+
+            scope.disableEditor = function () {
+                scope.view.editorEnabled = false;
+            };
+
+            scope.save = function () {
+                scope.value = scope.view.editableValue;
+                scope.disableEditor();
+            };
+
+        }
+    };
+});
+
+},{}],3:[function(require,module,exports){
 var app = angular.module('app');
 
 app.controller('HomeController', function ($scope, $location, UserService) {
@@ -59,7 +107,7 @@ app.controller('HomeController', function ($scope, $location, UserService) {
 });
 
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var app = angular.module('app');
 
 app.controller('LoginController', function ($scope, $location, loginService) {
@@ -81,7 +129,7 @@ app.controller('LoginController', function ($scope, $location, loginService) {
 
 
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 var app = angular.module("app");
 
 app.config(['$resourceProvider', function ($resourceProvider) {
@@ -99,7 +147,7 @@ app.factory('loginService', function ($resource) {
 
 
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 var app = angular.module("app");
 
 app.config(['$resourceProvider', function ($resourceProvider) {
@@ -116,7 +164,7 @@ app.factory('UserService', function ($resource) {
 });
 
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.0
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -886,11 +934,11 @@ angular.module('ngResource', ['ng']).
 
 })(window, window.angular);
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 require('./angular-resource');
 module.exports = 'ngResource';
 
-},{"./angular-resource":6}],8:[function(require,module,exports){
+},{"./angular-resource":7}],9:[function(require,module,exports){
 /**
  * @license AngularJS v1.7.5
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -2158,11 +2206,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":8}],10:[function(require,module,exports){
+},{"./angular-route":9}],11:[function(require,module,exports){
 /**
  * @license AngularJS v1.7.5
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -38384,8 +38432,8 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":10}]},{},[1,3,2,4,5]);
+},{"./angular":11}]},{},[1,2,4,3,5,6]);

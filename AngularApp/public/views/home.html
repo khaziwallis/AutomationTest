@@ -25,15 +25,20 @@
 		<div class="table-layout">
 				<table>
 					<h1>Current Projects</h1>
+					<div class="search-box">
+						<input class="search-txt" type="text" name="" placeholder="Search for projects" ng-model = "searchText.project">
+						<a class="search-btn"><i class="fas fa-search"></i></a>
+					</div>
+					<h4>Hover on any of the table data to edit on the fly.</h4>
 						<tr>
 							<th>Project</th>
 							<th>Status</th>
 							<th>Logs</th>
 						</tr>
-						<tr ng-repeat = "i in userData">
-							<td>{{i.project}}</td>
-							<td>{{i.status}}</td>
-							<td>{{i.logs}}</td>
+						<tr ng-repeat = "i in userData | filter: searchText">
+							<td><div click-to-edit = "i.project"></div></td>
+							<td><div click-to-edit = "i.status"></div></td>
+							<td><div click-to-edit = "i.logs"></div></td>
 						</tr>
 					</table>
 		</div>

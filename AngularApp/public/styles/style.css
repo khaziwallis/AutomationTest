@@ -11,6 +11,7 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #555555;
   height: 100vh;
 }
 
@@ -19,7 +20,7 @@ body{
 }
 
 .card-layout{
-  box-shadow: 1px 1px 1px 5px #ededed;
+  box-shadow: 1px 1px 1px 3px #ddd;
   background-color: white;
   padding: 35px 20px;
   width: 400px;
@@ -61,8 +62,8 @@ label{
 }
 
 .btn:hover{
-  background-color: #4CA727;
-  border: 2px solid #4CA727;
+  background-color: #dc3545;
+  border: 2px solid #dc3545;
   color: white;
 }
 
@@ -109,13 +110,13 @@ label{
   right: 20px;
   width: 120px;
   height: 35px;
-  transition-duration: 0.2s;
+  transition-duration: 0.4s;
   outline: none;
   font-size: 1.3rem;
 }
 
 .logoutBtn:hover{
-  background-color: #e73748;
+  background-color: #f1273c;
 }
 
 .red{
@@ -126,6 +127,11 @@ label{
   margin-top: 50px;
   color: #333;
 }
+
+.login-color{
+  color: #dc3545;
+}
+
 
 .editBtn{
   width: 93px;
@@ -153,3 +159,60 @@ table {
 th, td {
   padding: 15px;
 }
+
+.search-box{
+  position: absolute;
+  left: 56.5%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.search-btn{
+  color: #dc3545;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-box:hover > .search-txt{
+  width: 240px;
+  padding: 0 6px;
+}
+
+.search-txt{
+  border:none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  width: 0px;
+  line-height: 40px;
+}
+ 
+
+.dir-btn-edit{
+  cursor: pointer;
+}
+
+.dir-btn-edit:hover{
+  color: #dc3545;
+}
+
+.dir-btn-save, .dir-btn-cancel{
+  height: 100%; 
+  padding: 4.75px;
+  color: #dc3545;
+  text-decoration: none;
+  cursor: pointer;
+}
+
