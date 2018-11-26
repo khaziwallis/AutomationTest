@@ -39,8 +39,9 @@ app.directive("clickToEdit", function () {
             scope.save = function () {
                 scope.value = scope.view.editableValue;
                 scope.disableEditor();
-            };
-
+              };
         }
     };
 });
+
+

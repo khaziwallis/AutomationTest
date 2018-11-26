@@ -31,15 +31,39 @@
 					</div>
 					<h4>Hover on any of the table data to edit on the fly.</h4>
 						<tr>
+							<th>Sl No</th>
 							<th>Project</th>
 							<th>Status</th>
 							<th>Logs</th>
+							<th>Location</th>
 						</tr>
 						<tr ng-repeat = "i in userData | filter: searchText">
+							<td><input type="checkbox" ng-model="i.isDelete"/></td> 
 							<td><div click-to-edit = "i.project"></div></td>
 							<td><div click-to-edit = "i.status"></div></td>
-							<td><div click-to-edit = "i.logs"></div></td>
+							<td><div click-to-edit = "i.logs"></div></td>  
+							<td><div click-to-edit = "i.location"></div></td> 
 						</tr>
 					</table>
+					<button class="add-rem-btn" ng-click = "add()">Add</button>
+					<button class="add-rem-btn" ng-click = "remove()">Remove</button>
+					<br>
+					<div class="form-layout" ng-show = "showForm">
+						<h1>Add New Project You Currently Working!</h1>
+						<form name="addNewForm">
+							<h4 class="form-label">Project Name</h4><input class="inp-layout" type="text" ng-model = "pname" required>
+							<h4 class="form-label">Status</h4><select class="select-layout" ng-model = "pstatus">
+								<option selected disabled value="" hidden>Choose here</option>
+								<option>Development</option>
+								<option>Deployment</option>
+								<option>Planning</option>
+							</select>
+							<h4 class="form-label">Logs</h4><textarea class="txtarea-layout" type="text" ng-model = "plogs" required></textarea>
+							<h4 class="form-label">Location</h4>
+								JP Nagar<input name="location" type="radio" class="radio-layout" ng-model = "plocation" ng-value = "'JP Nagar'">
+								Whitefield<input name="location" type="radio" class="radio-layout" ng-model = "plocation" ng-value = "'Whitefield'">
+							<button ng-disabled = "addNewForm.$invalid" ng-click = "onSubmit()" class="add-btn">Add Project</button>
+					</div>
+					</form>
 		</div>
 </div>
