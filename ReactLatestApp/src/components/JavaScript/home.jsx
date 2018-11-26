@@ -1,17 +1,67 @@
 import React, { Component } from "react";
 import auth from "./auth";
+import axios from "axios";
 import "../css/home.css";
+import InlineEdit from "react-ions/lib/components/InlineEdit";
+import SearchInput from "react-search-input";
+import Popup from "./Popup";
 
 class Home extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+      searchTerm: ""
+    };
+    this.searchUpdated = this.searchUpdated.bind(this);
+    this.handleOnDelete = this.handleOnDelete.bind(this);
+  }
+
+  componentDidMount() {
+    axios.get("http://localhost:5000/api/data").then(res => {
+      this.setState({ data: res.data.userInfo });
+    });
+  }
+
+  searchUpdated(term) {
+    this.setState({ searchTerm: term });
+  }
+
+  addUser = newData => {
+    this.setState(prevState => {
+      let newUser = {
+        id: prevState.data.length + 1,
+        name: newData.name,
+        city: newData.city,
+        gender: newData.gender,
+        favFoods: newData.favFoods
+      };
+      let prevInfo = prevState.data;
+      prevInfo.push(newUser);
+      return {
+        data: prevInfo
+      };
+    });
+  };
+
+  handleOnDelete = index => {
+    const data = this.state.data;
+    data.splice(index, 1);
+    this.setState({ data });
+  };
+
   render() {
+    const filteredData = this.state.data.filter(item =>
+      item.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    );
+
     return (
       <div>
         <nav
-          class="navbar navbar-expand-lg navbar-dark"
+          className="navbar navbar-expand-lg navbar-dark"
           style={{ backgroundColor: "#212529" }}
         >
-          <span class="navbar-brand">Welcome Khazi</span>
+          <span className="navbar-brand">Welcome Khazi</span>
           <button
             className="logout-btn btn btn-info my-2 my-sm-0 "
             onClick={() => {
@@ -23,57 +73,55 @@ class Home extends Component {
             Logout
           </button>
         </nav>
-        <div class=" mt-5 add-data ">
-          <input
-            type="text"
-            class="form-control"
-            value="khazi"
-            className="inp-1 "
-          />
-
-          <div class="mt-3 drop-inp">
-            <select class="custom-select" id="inputGroupSelect01">
-              <option selected value="1">
-                Bengaluru
-              </option>
-              <option value="2">Mumbai</option>
-              <option value="3">Delhi</option>
-            </select>
-          </div>
-
-          <button type="button" class="btn btn-outline-info mt-3 mb-5">
-            Add
-          </button>
+        <div>
+          <SearchInput className="search-input" onChange={this.searchUpdated} />
         </div>
-
         <div className="tab-1">
-          <table class="table">
-            <thead class="thead-dark">
+          <table className="table">
+            <thead className="thead-light">
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">First Name</th>
-                <th scope="col">City</th>
+                <th scope="col">
+                  <InlineEdit value="ID" />{" "}
+                </th>
+                <th scope="col">
+                  <InlineEdit value="First Name" />
+                </th>
+                <th scope="col">
+                  <InlineEdit value="City" />
+                </th>
+                <th scope="col">
+                  <InlineEdit value="Gender" />
+                </th>
+                <th scope="col">
+                  <InlineEdit value="Favourite Cuisines" />
+                </th>
+                <th scope="col">
+                  <InlineEdit value="Action" />
+                </th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-              </tr>
+              {filteredData.map((info, index) => (
+                <tr key={index}>
+                  <th scope="row">{info.id}</th>
+                  <td>{info.name}</td>
+                  <td>{info.city}</td>
+                  <td>{info.gender}</td>
+                  <td>{info.favFoods + ""}</td>
+                  <td>
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => this.handleOnDelete(index)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
+        <Popup addNewUser={this.addUser} />
       </div>
     );
   }

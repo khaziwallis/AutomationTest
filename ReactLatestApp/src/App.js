@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import LoginPage from "./components/JavaScript/login";
 import Home from "./components/JavaScript/home";
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={Home} exact />
+          <Route path="/" component={LoginPage} exact />
           <ProtectedRoute path="/home" component={Home} exact />
           <Route path="*" component={LoginPage} />
         </Switch>

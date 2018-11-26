@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import auth from "../components/JavaScript/auth";
 
 export const ProtectedRoute = ({ component: Component, ...rest }) => {
+  const token = localStorage.getItem("token");
   return (
     <Route
       {...rest}
@@ -10,16 +11,20 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
         if (auth.isAuthenticated()) {
           return <Component {...props} />;
         } else {
-          return (
-            <Redirect
-              to={{
-                pathname: "/",
-                state: {
-                  from: props.location
-                }
-              }}
-            />
-          );
+          if (!token) {
+            return (
+              <Redirect
+                to={{
+                  pathname: "/",
+                  state: {
+                    from: props.location
+                  }
+                }}
+              />
+            );
+          } else {
+            return <Component {...props} />;
+          }
         }
       }}
     />
