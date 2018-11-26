@@ -1,5 +1,9 @@
 body{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
 
 .login-layout{
@@ -7,6 +11,7 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #555555;
   height: 100vh;
 }
 
@@ -15,7 +20,7 @@ body{
 }
 
 .card-layout{
-  box-shadow: 1px 1px 1px 5px #ededed;
+  box-shadow: 1px 1px 1px 3px #ddd;
   background-color: white;
   padding: 35px 20px;
   width: 400px;
@@ -30,13 +35,13 @@ body{
 }
 
 input{
-  font-size: 20px;
+  font-size: 1.2rem;
   text-decoration: none;
   outline: none;
 }
 
 label{
-  font-size: 20px;
+  font-size: 1.2rem;
   display: block;
 }
 
@@ -57,11 +62,218 @@ label{
 }
 
 .btn:hover{
-  background-color: #4CA727;
-  border: 2px solid #4CA727;
+  background-color: #dc3545;
+  border: 2px solid #dc3545;
   color: white;
 }
 
 .warning{
   color: red;
+}
+
+.container{
+  margin: 70px;
+}
+
+
+.topnav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  height: 60px;
+  color: #f2f2f2;
+}
+
+.topnav a{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.topnav p{
+  position: relative;
+  bottom: 4px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.logoutBtn{
+  float: right;
+  background-color: #dc3545;
+  border: 2px solid #dc3545;
+  border-radius: 20px;
+  color: #f2f2f2;
+  position: relative;
+  bottom: 55px;
+  right: 20px;
+  width: 120px;
+  height: 35px;
+  transition-duration: 0.4s;
+  outline: none;
+  font-size: 1.3rem;
+}
+
+.logoutBtn:hover{
+  background-color: #f1273c;
+}
+
+.red{
+  color: #dc3545;
+}
+
+.table-layout{
+  margin-top: 70px;
+  color: #333;
+}
+
+.login-color{
+  color: #dc3545;
+}
+
+
+.editBtn{
+  width: 93px;
+  height: 30px;
+  transition-duration: 0.2s;
+  outline: none;
+  font-size: 0.9rem;
+  background-color: #28a745;
+  border: 2px solid #28a745;
+  border-radius: 20px;
+  color: #f2f2f2;
+  outline: none;
+}
+
+table, td, th {    
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+}
+
+th, td {
+  padding: 15px;
+}
+
+.search-box{
+  position: absolute;
+  left: 57%;
+  bottom: 69%;
+  transform: translate(-50%, 0%);
+  background: #333;
+  height: 30px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.search-btn{
+  color: #dc3545;
+  float: right;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-box:hover > .search-txt{
+  width: 240px;
+  padding: 0 6px;
+}
+
+.search-txt{
+  border:none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  width: 0px;
+  line-height: 30px;
+}
+ 
+
+.dir-btn-edit{
+  cursor: pointer;
+}
+
+.dir-btn-edit:hover{
+  color: #dc3545;
+}
+
+.dir-btn-save, .dir-btn-cancel{
+  height: 100%; 
+  padding: 4.75px;
+  color: #dc3545;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-layout{
+  margin-top: 60px;
+}
+
+.inp-layout{
+  width: 35%;
+}
+
+textarea{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.txtarea-layout{
+  width: 35%;
+  height: 130px;
+  font-size: 1.2rem;
+}
+
+.form-label{
+  font-size: 1.2rem;
+}
+
+.add-rem-btn{
+  display: inline-block;
+}
+
+.add-btn{
+  display: block;
+}
+
+.add-btn, .add-rem-btn{
+  margin-top: 15px;
+  width: 135px;
+  height: 45px;
+  font-size: 1.3rem;
+  background-color: #dc3545;
+  border: 2px solid #dc3545;
+  border-radius: 20px;
+  color: #f2f2f2;
+  outline: none;
+}
+
+.add-btn, .add-rem-btn:active{
+  background-color: #dc3545;
+  transform: translateY(3px);
+}
+
+.select-layout{
+  width: 220px;
+  outline: none;
+  height: 35px;
+  background-color: whitesmoke;
+}
+
+.radio-layout{
+  margin: 0 10px 10px 5px;
+  font-size: 19px;
 }

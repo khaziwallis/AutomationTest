@@ -33,20 +33,106 @@ app.config(function($routeProvider, $locationProvider, $qProvider) {
    }
 })
 
-},{"angular":10,"angular-resource":6,"angular-route":8}],2:[function(require,module,exports){
+},{"angular":12,"angular-resource":8,"angular-route":10}],2:[function(require,module,exports){
 var app = angular.module('app');
 
-app.controller('HomeController', function ($scope, $location) {
+app.directive("clickToEdit", function () {
+    var editorTemplate = '' +
+        '<div class="click-to-edit">' +
+            '<div ng-hide="view.editorEnabled">' +
+                '<a class = "dir-btn-edit" ng-click="enableEditor()">{{value}}</a>' +
+            '</div>' +
+            '<div ng-show="view.editorEnabled">' +
+                '<input type="text" ng-model="view.editableValue">' +
+                '<a class="dir-btn-save" href="#" ng-click="save()">Save</a>' +
+                ' or ' +
+                '<a class="dir-btn-cancel" ng-click="disableEditor()">cancel</a>' +
+            '</div>' +
+        '</div>';
+
+    return {
+        restrict: "A",
+        replace: true,
+        template: editorTemplate,
+        scope: {
+            value: "=clickToEdit",
+        },
+        link: function (scope, element, attrs) {
+            scope.view = {
+                editableValue: scope.value,
+                editorEnabled: false
+            };
+            
+            scope.enableEditor = function () {
+                scope.view.editorEnabled = true;
+                scope.view.editableValue = scope.value;
+            };
+
+            scope.disableEditor = function () {
+                scope.view.editorEnabled = false;
+            };
+
+            scope.save = function () {
+                scope.value = scope.view.editableValue;
+                scope.disableEditor();
+              };
+        }
+    };
+});
+
+
+
+},{}],3:[function(require,module,exports){
+var app = angular.module('app');
+
+app.controller('HomeController', function ($scope, $location, UserService) {
 	$scope.title = "Test Title";
 	$scope.description = 'test description';
+	$scope.user;
+	$scope.userData = [];
+	$scope.pname;
+	$scope.pstatus;
+	$scope.plocation;
+	$scope.showForm = false;
 
 	$scope.logout = function(){
 		localStorage.clear("token");
 		$location.path('/login');
 	}	
+
+
+	$scope.getUser = function(){
+		UserService.get({}, function(response){
+			$scope.user = response;
+			$scope.userData = response.data;
+			console.log($scope.userData)
+		})
+	}
+
+	$scope.getUser();
+
+	$scope.onSubmit = function(){
+		$scope.formData = {"project": $scope.pname, "status": $scope.pstatus, "logs": $scope.plogs, "location": $scope.plocation};
+		$scope.userData.push($scope.formData);
+		}
+
+		$scope.add = function(){
+			$scope.showForm = true;
+		}
+
+		$scope.remove = function(){
+			var newDataList=[];
+			angular.forEach($scope.userData,function(v){
+			if(!v.isDelete){
+					newDataList.push(v);
+			}
+	});    $scope.userData = newDataList;
+	};
+		
 });
 
-},{}],3:[function(require,module,exports){
+
+},{}],4:[function(require,module,exports){
 var app = angular.module('app');
 
 app.controller('LoginController', function ($scope, $location, loginService) {
@@ -68,7 +154,7 @@ app.controller('LoginController', function ($scope, $location, loginService) {
 
 
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 var app = angular.module("app");
 
 app.config(['$resourceProvider', function ($resourceProvider) {
@@ -86,7 +172,24 @@ app.factory('loginService', function ($resource) {
 
 
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
+var app = angular.module("app");
+
+app.config(['$resourceProvider', function ($resourceProvider) {
+  $resourceProvider.defaults.stripTrailingSlashes = false;
+}]);
+
+app.factory('UserService', function ($resource) {
+  return $resource("http://localhost:3000/api/user001", {} , {
+      get: {
+          method: 'GET',
+          isArray: false,
+      }   
+  });
+});
+
+
+},{}],7:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.0
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -856,11 +959,11 @@ angular.module('ngResource', ['ng']).
 
 })(window, window.angular);
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 require('./angular-resource');
 module.exports = 'ngResource';
 
-},{"./angular-resource":5}],7:[function(require,module,exports){
+},{"./angular-resource":7}],9:[function(require,module,exports){
 /**
  * @license AngularJS v1.7.5
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -2128,11 +2231,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":7}],9:[function(require,module,exports){
+},{"./angular-route":9}],11:[function(require,module,exports){
 /**
  * @license AngularJS v1.7.5
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -38354,8 +38457,8 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":9}]},{},[1,3,2,4]);
+},{"./angular":11}]},{},[1,2,4,3,5,6]);
