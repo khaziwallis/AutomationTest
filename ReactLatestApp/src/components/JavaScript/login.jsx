@@ -18,6 +18,11 @@ class LoginPage extends Component {
     this.dismissError = this.dismissError.bind(this);
   }
 
+  componentWillMount() {
+    const token = localStorage.getItem("token");
+    if (token) this.props.history.push("/home");
+  }
+
   dismissError() {
     this.setState({ error: "" });
   }

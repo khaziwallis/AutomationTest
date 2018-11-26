@@ -7,11 +7,13 @@
     "bootstrap": "^4.1.1",
     "node-sass": "^4.10.0",
     "react": "^16.6.0",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.0",
     "react-ions": "^5.1.29",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.0"
+    "react-scripts": "2.1.0",
+    "react-search-input": "^0.11.3"
   },
   "scripts": {
     "start": "node api-mocks/index.js & react-scripts start",

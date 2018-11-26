@@ -3,19 +3,29 @@
   right: 1%;
 }
 
-.inp-1,
-.drop-inp {
-  width: 20%;
-}
-
 .tab-1 {
-  width: 35%;
+  width: 60%;
   position: absolute;
-  right: 17%;
-  left: 33%;
+  right: 15%;
+  left: 20%;
+  top: 30%;
   border: 1px solid black;
 }
 
-.add-data {
-  margin-left: 10%;
+input[type="search"] {
+  float: right;
+  margin-right: 2%;
+  width: 4.5%;
+  padding: 10px;
+  margin-top: 2%;
+  border-radius: 30px;
+  outline: none;
+  border: 2px solid black;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  background-color: rgba(198, 204, 199, 0.794);
+}
+
+input[type="search"]:focus {
+  width: 20%;
 }
