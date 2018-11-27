@@ -44,10 +44,12 @@ class Home extends Component {
     });
   };
 
-  handleOnDelete = index => {
+  handleOnDelete = name => {
     const data = this.state.data;
-    data.splice(index, 1);
-    this.setState({ data });
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].name === name) data.splice(i, 1);
+    }
+    this.setState({ data, searchTerm: "" });
   };
 
   render() {
@@ -74,7 +76,11 @@ class Home extends Component {
           </button>
         </nav>
         <div>
-          <SearchInput className="search-input" onChange={this.searchUpdated} />
+          <SearchInput
+            className="search-input"
+            onChange={this.searchUpdated}
+            value={this.state.searchTerm}
+          />
         </div>
         <div className="tab-1">
           <table className="table">
@@ -110,8 +116,8 @@ class Home extends Component {
                   <td>{info.favFoods + ""}</td>
                   <td>
                     <button
-                      className="btn btn-danger"
-                      onClick={() => this.handleOnDelete(index)}
+                      className="btn btn-outline-danger"
+                      onClick={() => this.handleOnDelete(info.name)}
                     >
                       Delete
                     </button>

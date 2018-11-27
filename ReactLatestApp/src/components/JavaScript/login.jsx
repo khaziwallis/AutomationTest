@@ -67,6 +67,7 @@ class LoginPage extends Component {
     return (
       <div className="Login">
         <form onSubmit={this.handleSubmit} className="form-layout">
+          <span className="mb-5">Please Login !!</span>
           <label>User Name</label>
           <input
             className=" input-1 form-control"
