@@ -87,7 +87,7 @@ class Home extends Component {
             <thead className="thead-light">
               <tr>
                 <th scope="col">
-                  <InlineEdit value="ID" />{" "}
+                  <InlineEdit value="ID" />
                 </th>
                 <th scope="col">
                   <InlineEdit value="First Name" />
