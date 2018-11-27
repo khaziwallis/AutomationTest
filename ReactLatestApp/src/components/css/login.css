@@ -6,6 +6,7 @@
   height: 100vh;
   font-size: 30px;
   background-color: lightgray;
+  border: 30px solid rgb(59, 2, 2);
 }
 
 .dismiss-error {
