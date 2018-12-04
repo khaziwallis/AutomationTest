@@ -2,25 +2,31 @@ import React, { Component } from "react";
 import auth from "./auth";
 import axios from "axios";
 import "../css/home.css";
-import InlineEdit from "react-ions/lib/components/InlineEdit";
 import SearchInput from "react-search-input";
 import Popup from "./Popup";
+import { Alert, Button } from "react-bootstrap";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
-      searchTerm: ""
+      searchTerm: "",
+      show: false
     };
     this.searchUpdated = this.searchUpdated.bind(this);
     this.handleOnDelete = this.handleOnDelete.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   componentDidMount() {
     axios.get("http://localhost:5000/api/data").then(res => {
       this.setState({ data: res.data.userInfo });
     });
+  }
+
+  handleClose() {
+    this.setState({ show: false });
   }
 
   searchUpdated(term) {
@@ -42,6 +48,9 @@ class Home extends Component {
         data: prevInfo
       };
     });
+    setTimeout(function() {
+      alert("User Added");
+    }, 1000);
   };
 
   handleOnDelete = name => {
@@ -76,6 +85,14 @@ class Home extends Component {
           </button>
         </nav>
         <div>
+          <Alert bsStyle="success">
+            <strong>User</strong> Added
+            <Button onClick={this.handleClose} className="btn btn-danger w-25">
+              Close
+            </Button>
+          </Alert>
+        </div>
+        <div>
           <SearchInput
             className="search-input"
             onChange={this.searchUpdated}
@@ -87,22 +104,22 @@ class Home extends Component {
             <thead className="thead-light">
               <tr>
                 <th scope="col">
-                  <InlineEdit value="ID" />
+                  <h5>ID</h5>
                 </th>
                 <th scope="col">
-                  <InlineEdit value="First Name" />
+                  <h5>First Name</h5>
                 </th>
                 <th scope="col">
-                  <InlineEdit value="City" />
+                  <h5>City</h5>
                 </th>
                 <th scope="col">
-                  <InlineEdit value="Gender" />
+                  <h5>Gender</h5>
                 </th>
                 <th scope="col">
-                  <InlineEdit value="Favourite Cuisines" />
+                  <h5>Favourite Cuisines</h5>
                 </th>
                 <th scope="col">
-                  <InlineEdit value="Action" />
+                  <h5>Actions</h5>
                 </th>
               </tr>
             </thead>
