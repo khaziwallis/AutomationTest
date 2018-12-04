@@ -1,5 +1,6 @@
 {
   "title": "Test started...",
+<<<<<<< HEAD
   "file": "/media/shanthkg/00CC84A0CC849198/Users/shanth/AutomationTest/TestFramework/stories/test.spec.js",
   "suites": [],
   "tests": [
@@ -16,14 +17,79 @@
       "fullTitle": "Test started... should have expected pawwsord label",
       "duration": 0.05,
       "error": null
+=======
+  "file": "/Users/al1354/projects/presentation/TestFramework/stories/test.spec.js",
+  "suites": [
+    {
+      "title": "testing of login page",
+      "file": "/Users/al1354/projects/presentation/TestFramework/stories/test.spec.js",
+      "suites": [],
+      "tests": [
+        {
+          "status": 1,
+          "title": "should have expected user name label",
+          "fullTitle": "Test started... testing of login page should have expected user name label",
+          "duration": 0.1,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should have expected password label",
+          "fullTitle": "Test started... testing of login page should have expected password label",
+          "duration": 0.04,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should set user name field with expected value",
+          "fullTitle": "Test started... testing of login page should set user name field with expected value",
+          "duration": 0.12,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should set password field with expected value",
+          "fullTitle": "Test started... testing of login page should set password field with expected value",
+          "duration": 0.13,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should change the url on submit",
+          "fullTitle": "Test started... testing of login page should change the url on submit",
+          "duration": 0.77,
+          "error": null
+        }
+      ],
+      "stats": {
+        "tests": 5,
+        "pending": 0,
+        "failures": 0,
+        "duration": 2.53,
+        "timeStart": 1543503775882,
+        "timeStop": 1543503778415
+      }
+
+>>>>>>> b42ff5643911111aedf5c21b0dbd10fdcc7adf7a
     }
   ],
+  "tests": [],
   "stats": {
+<<<<<<< HEAD
     "tests": 2,
     "pending": 0,
     "failures": 0,
     "duration": 1.41,
     "timeStart": 1543922382827,
     "timeStop": 1543922384240
+=======
+    "tests": 5,
+    "pending": 0,
+    "failures": 0,
+    "duration": 2.54,
+    "timeStart": 1543503775881,
+    "timeStop": 1543503778419
+
+>>>>>>> b42ff5643911111aedf5c21b0dbd10fdcc7adf7a
   }
 }
