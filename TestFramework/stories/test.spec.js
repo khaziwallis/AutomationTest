@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 describe('Test started...', function () {
 	var testSuites = [{
@@ -80,4 +80,5 @@ describe('Test started...', function () {
             });
         });
     });
+
 });
