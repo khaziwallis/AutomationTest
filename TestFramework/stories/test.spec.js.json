@@ -1,43 +1,29 @@
 {
   "title": "Test started...",
-  "file": "/Users/al1354/projects/presentation/TestFramework/stories/test.spec.js",
+  "file": "/media/shanthkg/00CC84A0CC849198/Users/shanth/AutomationTest/TestFramework/stories/test.spec.js",
   "suites": [],
   "tests": [
     {
       "status": 1,
-      "title": "should have expected title label",
-      "fullTitle": "Test started... should have expected title label",
+      "title": "should have expected user name label",
+      "fullTitle": "Test started... should have expected user name label",
       "duration": 0.09,
       "error": null
     },
     {
       "status": 1,
-      "title": "should have expected title",
-      "fullTitle": "Test started... should have expected title",
-      "duration": 0.04,
-      "error": null
-    },
-    {
-      "status": 1,
-      "title": "should have expected description label",
-      "fullTitle": "Test started... should have expected description label",
+      "title": "should have expected pawwsord label",
+      "fullTitle": "Test started... should have expected pawwsord label",
       "duration": 0.05,
-      "error": null
-    },
-    {
-      "status": 1,
-      "title": "should have expected description",
-      "fullTitle": "Test started... should have expected description",
-      "duration": 0.08,
       "error": null
     }
   ],
   "stats": {
-    "tests": 4,
+    "tests": 2,
     "pending": 0,
     "failures": 0,
-    "duration": 0.67,
-    "timeStart": 1539603784471,
-    "timeStop": 1539603785143
+    "duration": 1.41,
+    "timeStart": 1543922382827,
+    "timeStop": 1543922384240
   }
 }
