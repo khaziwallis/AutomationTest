@@ -1,29 +1,67 @@
 {
   "title": "Test started...",
-  "file": "/media/vinay/94108E80108E68D6/Training/AutomationTest/TestFramework/stories/test.spec.js",
-  "suites": [],
-  "tests": [
+  "file": "/Users/al1354/projects/presentation/TestFramework/stories/test.spec.js",
+  "suites": [
     {
-      "status": 1,
-      "title": "should have expected User Name label",
-      "fullTitle": "Test started... should have expected User Name label",
-      "duration": 0.04,
-      "error": null
-    },
-    {
-      "status": 1,
-      "title": "should have expected Password label",
-      "fullTitle": "Test started... should have expected Password label",
-      "duration": 0.03,
-      "error": null
+      "title": "testing of login page",
+      "file": "/Users/al1354/projects/presentation/TestFramework/stories/test.spec.js",
+      "suites": [],
+      "tests": [
+        {
+          "status": 1,
+          "title": "should have expected user name label",
+          "fullTitle": "Test started... testing of login page should have expected user name label",
+          "duration": 0.1,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should have expected password label",
+          "fullTitle": "Test started... testing of login page should have expected password label",
+          "duration": 0.04,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should set user name field with expected value",
+          "fullTitle": "Test started... testing of login page should set user name field with expected value",
+          "duration": 0.12,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should set password field with expected value",
+          "fullTitle": "Test started... testing of login page should set password field with expected value",
+          "duration": 0.13,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should change the url on submit",
+          "fullTitle": "Test started... testing of login page should change the url on submit",
+          "duration": 0.77,
+          "error": null
+        }
+      ],
+      "stats": {
+        "tests": 5,
+        "pending": 0,
+        "failures": 0,
+        "duration": 2.53,
+        "timeStart": 1543503775882,
+        "timeStop": 1543503778415
+      }
+
     }
   ],
+  "tests": [],
   "stats": {
-    "tests": 2,
+    "tests": 5,
     "pending": 0,
     "failures": 0,
-    "duration": 0.63,
-    "timeStart": 1543922899594,
-    "timeStop": 1543922900227
+    "duration": 2.54,
+    "timeStart": 1543503775881,
+    "timeStop": 1543503778419
+
   }
 }
