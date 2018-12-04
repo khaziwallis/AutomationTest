@@ -6,12 +6,14 @@ app.controller('LoginController', function ($scope, $location, loginService) {
 		loginService.login({}, {
 			userName: $scope.userName,
 			password: $scope.password
+
 		},function (response) {
 			console.log(response);
 			localStorage.setItem("token", response.token);
 			$location.path('/home');
 		});	
 		$scope.errorStatus = true;
+	
 	};
 });
 

@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('HomeController', function ($scope, $location, UserService) {
+app.controller('HomeController', function ($scope, $location, UserService, $timeout) {
 	$scope.title = "Test Title";
 	$scope.description = 'test description';
 	$scope.user;
@@ -9,6 +9,7 @@ app.controller('HomeController', function ($scope, $location, UserService) {
 	$scope.pstatus;
 	$scope.plocation;
 	$scope.showForm = false;
+	$scope.addMsg = false;
 
 	$scope.logout = function(){
 		localStorage.clear("token");
@@ -20,7 +21,6 @@ app.controller('HomeController', function ($scope, $location, UserService) {
 		UserService.get({}, function(response){
 			$scope.user = response;
 			$scope.userData = response.data;
-			console.log($scope.userData)
 		})
 	}
 
@@ -29,6 +29,10 @@ app.controller('HomeController', function ($scope, $location, UserService) {
 	$scope.onSubmit = function(){
 		$scope.formData = {"project": $scope.pname, "status": $scope.pstatus, "logs": $scope.plogs, "location": $scope.plocation};
 		$scope.userData.push($scope.formData);
+		$scope.addMsg = true;
+		$timeout(function(){
+			$scope.addMsg = false;
+		},3000);
 		}
 
 		$scope.add = function(){

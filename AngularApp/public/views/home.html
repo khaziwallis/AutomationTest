@@ -19,9 +19,10 @@
 				<input
 					data-test-hook="input-value"
 					type="name" value="Khazi"
-					name="name" />
+					name="name"/>
 			</label>
 		</div>
+
 		<div class="table-layout">
 				<table>
 					<h1>Current Projects</h1>
@@ -49,10 +50,10 @@
 					<button class="add-rem-btn" ng-click = "remove()">Remove</button>
 					<br>
 					<div class="form-layout" ng-show = "showForm">
-						<h1>Add New Project You Currently Working!</h1>
-						<form name="addNewForm">
+						<h1>Add New Project You Currently Working!</h1><span class="add-alert" ng-show = "addMsg">New project has been added!</span>
+						<fom name="addNewForm">
 							<h4 class="form-label">Project Name</h4><input class="inp-layout" type="text" ng-model = "pname" required>
-							<h4 class="form-label">Status</h4><select class="select-layout" ng-model = "pstatus">
+							<h4 class="form-label">Status</h4><select class="select-layout" ng-model = "pstatus" required>
 								<option selected disabled value="" hidden>Choose here</option>
 								<option>Development</option>
 								<option>Deployment</option>
@@ -62,7 +63,7 @@
 							<h4 class="form-label">Location</h4>
 								JP Nagar<input name="location" type="radio" class="radio-layout" ng-model = "plocation" ng-value = "'JP Nagar'">
 								Whitefield<input name="location" type="radio" class="radio-layout" ng-model = "plocation" ng-value = "'Whitefield'">
-							<button ng-disabled = "addNewForm.$invalid" ng-click = "onSubmit()" class="add-btn">Add Project</button>
+							<button type="reset" ng-disabled = "addNewForm.$invalid" ng-click = "onSubmit()" class="add-btn">Add Project</button>
 					</div>
 					</form>
 		</div>
