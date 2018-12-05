@@ -1,67 +1,68 @@
 {
   "title": "Test started...",
-  "file": "/Users/al1354/projects/presentation/TestFramework/stories/test.spec.js",
+  "file": "/media/vinay/94108E80108E68D6/Training/AutomationTest/TestFramework/stories/test.spec.js",
   "suites": [
     {
       "title": "testing of login page",
-      "file": "/Users/al1354/projects/presentation/TestFramework/stories/test.spec.js",
+      "file": "/media/vinay/94108E80108E68D6/Training/AutomationTest/TestFramework/stories/test.spec.js",
       "suites": [],
       "tests": [
         {
           "status": 1,
           "title": "should have expected user name label",
           "fullTitle": "Test started... testing of login page should have expected user name label",
-          "duration": 0.1,
+          "duration": 0.04,
           "error": null
         },
         {
           "status": 1,
           "title": "should have expected password label",
           "fullTitle": "Test started... testing of login page should have expected password label",
-          "duration": 0.04,
+          "duration": 0.03,
           "error": null
         },
         {
           "status": 1,
           "title": "should set user name field with expected value",
           "fullTitle": "Test started... testing of login page should set user name field with expected value",
-          "duration": 0.12,
+          "duration": 0.09,
           "error": null
         },
         {
           "status": 1,
           "title": "should set password field with expected value",
           "fullTitle": "Test started... testing of login page should set password field with expected value",
-          "duration": 0.13,
+          "duration": 0.08,
           "error": null
         },
         {
-          "status": 1,
+          "status": 0,
           "title": "should change the url on submit",
           "fullTitle": "Test started... testing of login page should change the url on submit",
-          "duration": 0.77,
-          "error": null
+          "duration": 0.28,
+          "error": {
+            "stack": "Error: Error while waiting for Protractor to sync with the page: \"both angularJS testability and angular testability are undefined.  This could be either because this is a non-angular page or because your test involves client-side navigation, which can interfere with Protractor's bootstrapping.  See http://git.io/v4gXM for details\"\n    at runWaitForAngularScript.then (/usr/lib/node_modules/protractor/built/browser.js:463:23)\n    at ManagedPromise.invokeCallback_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1376:14)\n    at TaskQueue.execute_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)\n    at TaskQueue.executeNext_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3067:27)\n    at asyncRun (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2927:27)\n    at /usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:668:7\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:189:7)\nFrom: Task: Test started... testing of login page should change the url on submit\n    at Context.ret (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:182:10)",
+            "message": "Error while waiting for Protractor to sync with the page: \"both angularJS testability and angular testability are undefined.  This could be either because this is a non-angular page or because your test involves client-side navigation, which can interfere with Protractor's bootstrapping.  See http://git.io/v4gXM for details\""
+          }
         }
       ],
       "stats": {
         "tests": 5,
         "pending": 0,
-        "failures": 0,
-        "duration": 2.53,
-        "timeStart": 1543503775882,
-        "timeStop": 1543503778415
+        "failures": 1,
+        "duration": 1.08,
+        "timeStart": 1544003544353,
+        "timeStop": 1544003545431
       }
-
     }
   ],
   "tests": [],
   "stats": {
     "tests": 5,
     "pending": 0,
-    "failures": 0,
-    "duration": 2.54,
-    "timeStart": 1543503775881,
-    "timeStop": 1543503778419
-
+    "failures": 1,
+    "duration": 1.08,
+    "timeStart": 1544003544352,
+    "timeStop": 1544003545433
   }
 }
