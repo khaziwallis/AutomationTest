@@ -90,9 +90,8 @@ class LoginPage extends Component {
             type="submit"
             value="Log In"
             className="btn btn-primary submit"
-            data-test-hook="submitBtn"
           >
-            <h3>{"Log In "}</h3>
+            <h3 data-test-hook="submitBtn">{"Log In "}</h3>
           </button>
           {this.state.error && (
             <h3 data-test-hook="errorMsg" className="error-msg">

@@ -4,7 +4,6 @@ import axios from "axios";
 import "../css/home.css";
 import SearchInput from "react-search-input";
 import Popup from "./Popup";
-import { Alert, Button } from "react-bootstrap";
 
 class Home extends Component {
   constructor(props) {
@@ -84,14 +83,6 @@ class Home extends Component {
             Logout
           </button>
         </nav>
-        <div>
-          <Alert bsStyle="success">
-            <strong>User</strong> Added
-            <Button onClick={this.handleClose} className="btn btn-danger w-25">
-              Close
-            </Button>
-          </Alert>
-        </div>
         <div>
           <SearchInput
             className="search-input"
