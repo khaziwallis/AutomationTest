@@ -65,10 +65,11 @@ describe('Test started...', function () {
                     if (testCase.scope === 'browser') {
                         testObj = browser;
                     }
-
+                    
                     /* expect module: will perform validation
                         input: javascript DOM element against which validation need to be perfomed based on suite
                     */
+                   
                     if (testCase.expected) {
                         expect(testObj.getText()).to.eventually.eql(testCase.expected);
                     } else if (testCase.expectedAttributeValue) {
