@@ -66,8 +66,6 @@ describe("Test started...", function() {
           }
           if (testCase.action) {
             if (testCase.action === "click") {
-              console.log(testObj);
-              debugger;
               testObj.click();
             }
           }
