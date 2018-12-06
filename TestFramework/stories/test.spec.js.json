@@ -1,45 +1,45 @@
 {
   "title": "Test started...",
-  "file": "/Users/al1354/projects/presentation/TestFramework/stories/test.spec.js",
+  "file": "/media/shanthkg/00CC84A0CC849198/Users/shanth/AutomationTest/TestFramework/stories/test.spec.js",
   "suites": [
     {
       "title": "testing of login page",
-      "file": "/Users/al1354/projects/presentation/TestFramework/stories/test.spec.js",
+      "file": "/media/shanthkg/00CC84A0CC849198/Users/shanth/AutomationTest/TestFramework/stories/test.spec.js",
       "suites": [],
       "tests": [
         {
           "status": 1,
           "title": "should have expected user name label",
           "fullTitle": "Test started... testing of login page should have expected user name label",
-          "duration": 0.1,
+          "duration": 0.06,
           "error": null
         },
         {
           "status": 1,
           "title": "should have expected password label",
           "fullTitle": "Test started... testing of login page should have expected password label",
-          "duration": 0.04,
+          "duration": 0.02,
           "error": null
         },
         {
           "status": 1,
           "title": "should set user name field with expected value",
           "fullTitle": "Test started... testing of login page should set user name field with expected value",
-          "duration": 0.12,
+          "duration": 0.06,
           "error": null
         },
         {
           "status": 1,
           "title": "should set password field with expected value",
           "fullTitle": "Test started... testing of login page should set password field with expected value",
-          "duration": 0.13,
+          "duration": 0.04,
           "error": null
         },
         {
           "status": 1,
           "title": "should change the url on submit",
           "fullTitle": "Test started... testing of login page should change the url on submit",
-          "duration": 0.77,
+          "duration": 0.26,
           "error": null
         }
       ],
@@ -47,11 +47,10 @@
         "tests": 5,
         "pending": 0,
         "failures": 0,
-        "duration": 2.53,
-        "timeStart": 1543503775882,
-        "timeStop": 1543503778415
+        "duration": 2.19,
+        "timeStart": 1544082952792,
+        "timeStop": 1544082954981
       }
-
     }
   ],
   "tests": [],
@@ -59,9 +58,8 @@
     "tests": 5,
     "pending": 0,
     "failures": 0,
-    "duration": 2.54,
-    "timeStart": 1543503775881,
-    "timeStop": 1543503778419
-
+    "duration": 2.19,
+    "timeStart": 1544082952791,
+    "timeStop": 1544082954984
   }
 }
