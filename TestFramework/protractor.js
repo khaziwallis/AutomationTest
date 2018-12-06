@@ -39,6 +39,7 @@ exports.config = {
       .window()
       .setSize(1366, 768);
     exports.setupTestGlobals();
+    browser.ignoreSynchronization = true;
   },
 
   // Capabilities to be passed to the webdriver instance.

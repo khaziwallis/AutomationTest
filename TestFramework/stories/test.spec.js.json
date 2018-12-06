@@ -11,45 +11,51 @@
           "status": 1,
           "title": "should have expected user name label",
           "fullTitle": "Test started... testing of login page should have expected user name label",
-          "duration": 0.06,
+          "duration": 0.08,
           "error": null
         },
         {
           "status": 1,
           "title": "should have expected password label",
           "fullTitle": "Test started... testing of login page should have expected password label",
-          "duration": 0.02,
+          "duration": 0.05,
           "error": null
         },
         {
           "status": 1,
           "title": "should set user name field with expected value",
           "fullTitle": "Test started... testing of login page should set user name field with expected value",
-          "duration": 0.06,
+          "duration": 0.21,
           "error": null
         },
         {
           "status": 1,
           "title": "should set password field with expected value",
           "fullTitle": "Test started... testing of login page should set password field with expected value",
-          "duration": 0.04,
+          "duration": 0.2,
           "error": null
         },
         {
-          "status": 1,
+          "status": 0,
           "title": "should change the url on submit",
           "fullTitle": "Test started... testing of login page should change the url on submit",
-          "duration": 0.26,
-          "error": null
+          "duration": 0.17,
+          "error": {
+            "message": "expected 'http://localhost:3000/' to deeply equal 'http://localhost:3000/home'",
+            "showDiff": true,
+            "actual": "http://localhost:3000/",
+            "expected": "http://localhost:3000/home",
+            "stack": "AssertionError: expected 'http://localhost:3000/' to deeply equal 'http://localhost:3000/home'\nFrom: Task: Test started... testing of login page should change the url on submit\n    at Context.ret (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:182:10)"
+          }
         }
       ],
       "stats": {
         "tests": 5,
         "pending": 0,
-        "failures": 0,
-        "duration": 2.19,
-        "timeStart": 1544082952792,
-        "timeStop": 1544082954981
+        "failures": 1,
+        "duration": 1.46,
+        "timeStart": 1544098024203,
+        "timeStop": 1544098025666
       }
     }
   ],
@@ -57,9 +63,9 @@
   "stats": {
     "tests": 5,
     "pending": 0,
-    "failures": 0,
-    "duration": 2.19,
-    "timeStart": 1544082952791,
-    "timeStop": 1544082954984
+    "failures": 1,
+    "duration": 1.48,
+    "timeStart": 1544098024202,
+    "timeStop": 1544098025678
   }
 }

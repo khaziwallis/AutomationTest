@@ -1,4 +1,3 @@
-
 module.exports = [{
         url: 'http://localhost:9000',
         describeStatement: 'testing of login page',
