@@ -7,7 +7,6 @@ describe('Test started...', function () {
             before(function () {
                 browser.driver.get(testSuite.url);
             });
-
             testSuite.expectedTests.forEach(function (testCase) {
                 it(testCase.message, function () {
                     /* initialization module: will initialize javascript DOM object
