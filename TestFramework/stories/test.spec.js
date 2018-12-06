@@ -1,12 +1,12 @@
 "use strict";
-var testSuites = require('../test-config/ng-test-config');
+var testSuites = require('../test-config/react-test-config');
 
 describe('Test started...', function () { 
     testSuites.forEach(function (testSuite) {
         describe(testSuite.describeStatement, function () {
             before(function () {
                 browser.driver.get(testSuite.url);
-            });
+          });
             testSuite.expectedTests.forEach(function (testCase) {
                 it(testCase.message, function () {
                     /* initialization module: will initialize javascript DOM object
