@@ -1,0 +1,43 @@
+[
+  {
+    "request": {
+      "url": "^/api/users$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "body": "{\"items\": [{\"name\": \"vinay\",\"id\": \"vinay123\"}, {\"name\": \"shant\",\"id\": \"shant123\"}]}"
+    }
+  },
+  {
+    "request": {
+      "url": "^/api/login$",
+      "method": "POST",
+      "post": "{\"userName\":\"accion\",\"password\":\"failure\"}"
+    },
+    "response": {
+      "status": 500
+    }
+  },
+  {
+    "request": {
+      "url": "^/api/login$",
+      "method": "POST",
+      "post": "{\"userName\":\"accion\",\"password\":\"success\"}"
+    },
+    "response": {
+      "status": 200,
+      "body": "{\"token\": \"123456\"}"
+    }
+  },
+  {
+    "request": {
+      "url": "^/api/user001$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "body": "{\"token\": \"123456\", \"userid\": \"001\",\"name\": \"Khazi\", \"data\": [{\"project\": \"Encore\", \"status\": \"Development\", \"logs\": \"No issues\", \"location\": \"JP Nagar\"},{\"project\": \"Amwater\", \"status\": \"Planning\", \"logs\": \"Bugs to be resolved\", \"location\": \"Whitefield\"},{\"project\": \"Ecohealth\", \"status\": \"Deployment\", \"logs\": \"Test cases to be updated\", \"location\": \"JP Nagar\"},{\"project\": \"Euler Bank\", \"status\": \"Development\", \"logs\": \"No issues\", \"location\": \"Whitefield\"}]}"
+    }
+  }
+]

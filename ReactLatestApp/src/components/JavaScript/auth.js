@@ -8,14 +8,14 @@ class Auth {
   login(params, cb) {
     let axiosConfig = {
       headers: {
-          'Content-Type': 'application/json;charset=UTF-8'
+        "Content-Type": "application/json;charset=UTF-8"
       }
     };
     axios({
       method: "post",
-      baseURL: "http://localhost:5000/api",
-      url: "/post",
-      params: params,
+      baseURL: "http://localhost:3000/api",
+      url: "/login",
+      data: params,
       config: axiosConfig
     }).then(res => {
       if (res.data.token) {
@@ -26,7 +26,6 @@ class Auth {
         alert("enter valid Username or password");
       }
     });
-
   }
 
   logout(cb) {
