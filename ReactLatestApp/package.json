@@ -15,7 +15,7 @@
     "react-search-input": "^0.11.3"
   },
   "scripts": {
-    "start": "node api-mocks/index.js & react-scripts start",
+    "start": "./node_modules/.bin/gulp onlystubbed & react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -30,6 +30,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "api-stub": "0.0.2"
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-shell": "^0.6.5",
+    "gulp-yaml": "^2.0.2",
+    "stubby": "^4.0.0"
   }
 }

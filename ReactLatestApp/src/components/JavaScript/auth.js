@@ -6,11 +6,17 @@ class Auth {
   }
 
   login(params, cb) {
+    let axiosConfig = {
+      headers: {
+          'Content-Type': 'application/json;charset=UTF-8'
+      }
+    };
     axios({
       method: "post",
-      url: "http://localhost:5000/api/post",
+      baseURL: "http://localhost:5000/api",
+      url: "/post",
       params: params,
-      config: { headers: { "Content-Type": "multipart/form-data" } }
+      config: axiosConfig
     }).then(res => {
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
@@ -20,6 +26,7 @@ class Auth {
         alert("enter valid Username or password");
       }
     });
+
   }
 
   logout(cb) {
