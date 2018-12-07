@@ -1,6 +1,6 @@
 module.exports = [
     {
-      url: "http://localhost:3000",
+      url: "http://localhost:3001",
       describeStatement: "testing of login page",
       expectedTests: [
         {
@@ -33,7 +33,7 @@ module.exports = [
           action: "click",
           scope: "browser",
           method: "getCurrentUrl",
-          expectedBrowserValue: "http://localhost:3000/home"
+          expectedBrowserValue: "http://localhost:3001/home"
         }
       ]
     }

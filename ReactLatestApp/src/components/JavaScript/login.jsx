@@ -95,15 +95,20 @@ class LoginPage extends Component {
             <h3>{"Log In "}</h3>
           </button>
           {this.state.error && (
-            <h3 data-test-hook="errorMsg" className="error-msg">
-              <button
-                className="btn btn-danger btn-sm dismiss-error"
+            <div>
+              <h3 data-test-hook="errorMsg"
                 onClick={this.dismissError}
-              >
-                ✖
+                className="error-msg">
+                {this.state.error}
+              </h3>
+              <button
+                data-test-hook="submitBtn"
+                className="btn btn-danger btn-sm dismiss-error"
+                type="button"
+                onClick={this.handleSubmit}>
+                Submit
               </button>
-              {this.state.error}
-            </h3>
+            </div>
           )}
         </form>
       </div>
