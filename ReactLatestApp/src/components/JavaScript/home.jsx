@@ -19,8 +19,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:5000/api/user001").then(res => {
-      this.setState({ data: res.data.userInfo });
+    axios.get("http://localhost:3000/api/user001").then(res => {
+      this.setState({ data: res.data });
     });
   }
 
@@ -47,9 +47,6 @@ class Home extends Component {
         data: prevInfo
       };
     });
-    setTimeout(function() {
-      alert("User Added");
-    }, 1000);
   };
 
   handleOnDelete = name => {
