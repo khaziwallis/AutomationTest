@@ -41,5 +41,8 @@ gulp.task('stubbed', ['mocks', 'browserify', 'connect', 'watch'], function () {
     startStubby();
 });//server:stubbed
 
+gulp.task('onlystubbed', ['mocks'], function () {
+    startStubby();
+});//server:stubbed
 
 gulp.task('default', ['browserify','connect','watch']);

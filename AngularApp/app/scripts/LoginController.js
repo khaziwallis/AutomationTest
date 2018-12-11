@@ -3,7 +3,7 @@ var app = angular.module('app');
 app.controller('LoginController', function ($scope, $location, loginService) {
 	$scope.errorStatus = false;
 	$scope.login = function () {
-		loginService.login({}, {
+		loginService.login({
 			userName: $scope.userName,
 			password: $scope.password
 
