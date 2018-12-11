@@ -13,6 +13,7 @@ exports.setupTestGlobals = () => {
   navigation = require("./pages/navigation.page");
   configurations = require("./pages/configurations.page");
   initlize = require("./pages/initilize.page");
+  action = require("./pages/actions.page");
 };
 
 exports.config = {

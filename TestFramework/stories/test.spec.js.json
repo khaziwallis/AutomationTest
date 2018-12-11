@@ -1,31 +1,31 @@
 {
   "title": "Test started...",
-  "file": "/media/vinay/94108E80108E68D6/Training/AutomationTest/TestFramework/stories/test.spec.js",
+  "file": "/media/shanthkg/00CC84A0CC849198/Users/shanth/AutomationTest/TestFramework/stories/test.spec.js",
   "suites": [
     {
       "title": "testing of login page",
-      "file": "/media/vinay/94108E80108E68D6/Training/AutomationTest/TestFramework/stories/test.spec.js",
+      "file": "/media/shanthkg/00CC84A0CC849198/Users/shanth/AutomationTest/TestFramework/stories/test.spec.js",
       "suites": [],
       "tests": [
         {
           "status": 1,
           "title": "should have expected user name label",
           "fullTitle": "Test started... testing of login page should have expected user name label",
-          "duration": 0.04,
+          "duration": 0.07,
           "error": null
         },
         {
           "status": 1,
           "title": "should have expected password label",
           "fullTitle": "Test started... testing of login page should have expected password label",
-          "duration": 0.04,
+          "duration": 0.03,
           "error": null
         },
         {
           "status": 1,
           "title": "should set user name field with expected value",
           "fullTitle": "Test started... testing of login page should set user name field with expected value",
-          "duration": 0.12,
+          "duration": 0.09,
           "error": null
         },
         {
@@ -39,69 +39,27 @@
           "status": 1,
           "title": "should change the url on submit",
           "fullTitle": "Test started... testing of login page should change the url on submit",
-          "duration": 0.27,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should delete a user to the table",
-          "fullTitle": "Test started... testing of login page should delete a user to the table",
           "duration": 0.26,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should search for user in the table",
-          "fullTitle": "Test started... testing of login page should search for user in the table",
-          "duration": 0.26,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should search for user in the table",
-          "fullTitle": "Test started... testing of login page should search for user in the table",
-          "duration": 0.06,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should add a user to the table",
-          "fullTitle": "Test started... testing of login page should add a user to the table",
-          "duration": 0.3,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should set name field with expected value",
-          "fullTitle": "Test started... testing of login page should set name field with expected value",
-          "duration": 0.11,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should set city field with expected value",
-          "fullTitle": "Test started... testing of login page should set city field with expected value",
-          "duration": 0.09,
           "error": null
         }
       ],
       "stats": {
-        "tests": 11,
+        "tests": 5,
         "pending": 0,
         "failures": 0,
-        "duration": 2.24,
-        "timeStart": 1544520178718,
-        "timeStop": 1544520180959
+        "duration": 1.41,
+        "timeStart": 1544522962982,
+        "timeStop": 1544522964391
       }
     }
   ],
   "tests": [],
   "stats": {
-    "tests": 11,
+    "tests": 5,
     "pending": 0,
     "failures": 0,
-    "duration": 2.24,
-    "timeStart": 1544520178718,
-    "timeStop": 1544520180961
+    "duration": 1.41,
+    "timeStart": 1544522962982,
+    "timeStop": 1544522964393
   }
 }
