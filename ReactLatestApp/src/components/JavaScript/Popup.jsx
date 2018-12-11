@@ -93,6 +93,7 @@ class Popup extends Component {
           bsSize="large"
           onClick={this.handleShow}
           className="add-btn"
+          data-test-hook={this.props.dataTest}
         >
           {"Add User"}
         </Button>
@@ -111,6 +112,7 @@ class Popup extends Component {
                   className="form-control"
                   placeholder="Name"
                   onChange={this.handleNameChange}
+                  data-test-hook="newName"
                 />
               </div>
               <div className="mt-2">
@@ -118,6 +120,7 @@ class Popup extends Component {
                   className="custom-select"
                   onChange={this.handleCityChange}
                   id="inputGroupSelect01"
+                  data-test-hook="newCity"
                 >
                   <option value="1">-- Your City --</option>
                   <option value="Bengaluru">Bengaluru</option>
@@ -126,7 +129,7 @@ class Popup extends Component {
                 </select>
               </div>
               <div className="radio-btn">
-                <div className="radio m-2">
+                <div className="radio m-2" data-test-hook="newGender">
                   <label>
                     <input
                       type="radio"

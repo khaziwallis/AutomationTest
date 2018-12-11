@@ -68,9 +68,10 @@ class Home extends Component {
           className="navbar navbar-expand-lg navbar-dark"
           style={{ backgroundColor: "#212529" }}
         >
-          <span className="navbar-brand">Welcome Khazi</span>
+          <span className="navbar-brand">Welcome</span>
           <button
             className="logout-btn btn btn-info my-2 my-sm-0 "
+            data-test-hook="logoutBtn"
             onClick={() => {
               auth.logout(() => {
                 this.props.history.push("/");
@@ -85,6 +86,7 @@ class Home extends Component {
             className="search-input"
             onChange={this.searchUpdated}
             value={this.state.searchTerm}
+            data-test-hook="searchName"
           />
         </div>
         <div className="tab-1">
@@ -123,6 +125,7 @@ class Home extends Component {
                     <button
                       className="btn btn-outline-danger"
                       onClick={() => this.handleOnDelete(info.name)}
+                      data-test-hook="deleteUser"
                     >
                       Delete
                     </button>
@@ -132,7 +135,7 @@ class Home extends Component {
             </tbody>
           </table>
         </div>
-        <Popup addNewUser={this.addUser} />
+        <Popup addNewUser={this.addUser} dataTest="addUser" />
       </div>
     );
   }
