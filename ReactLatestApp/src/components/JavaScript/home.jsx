@@ -19,8 +19,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:5000/api/user001").then(res => {
-      this.setState({ data: res.data.userInfo });
+    axios.get("http://localhost:3000/api/user001").then(res => {
+      this.setState({ data: res.data });
     });
   }
 
@@ -47,9 +47,6 @@ class Home extends Component {
         data: prevInfo
       };
     });
-    setTimeout(function() {
-      alert("User Added");
-    }, 1000);
   };
 
   handleOnDelete = name => {
@@ -71,9 +68,10 @@ class Home extends Component {
           className="navbar navbar-expand-lg navbar-dark"
           style={{ backgroundColor: "#212529" }}
         >
-          <span className="navbar-brand">Welcome Khazi</span>
+          <span className="navbar-brand">Welcome</span>
           <button
             className="logout-btn btn btn-info my-2 my-sm-0 "
+            data-test-hook="logoutBtn"
             onClick={() => {
               auth.logout(() => {
                 this.props.history.push("/");
@@ -88,6 +86,7 @@ class Home extends Component {
             className="search-input"
             onChange={this.searchUpdated}
             value={this.state.searchTerm}
+            data-test-hook="searchName"
           />
         </div>
         <div className="tab-1">
@@ -126,6 +125,7 @@ class Home extends Component {
                     <button
                       className="btn btn-outline-danger"
                       onClick={() => this.handleOnDelete(info.name)}
+                      data-test-hook="deleteUser"
                     >
                       Delete
                     </button>
@@ -135,7 +135,7 @@ class Home extends Component {
             </tbody>
           </table>
         </div>
-        <Popup addNewUser={this.addUser} />
+        <Popup addNewUser={this.addUser} dataTest="addUser" />
       </div>
     );
   }
