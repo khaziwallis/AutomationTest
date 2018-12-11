@@ -11,7 +11,7 @@
           "status": 1,
           "title": "should have expected user name label",
           "fullTitle": "Test started... testing of login page should have expected user name label",
-          "duration": 0.05,
+          "duration": 0.06,
           "error": null
         },
         {
@@ -25,21 +25,21 @@
           "status": 1,
           "title": "should set user name field with expected value",
           "fullTitle": "Test started... testing of login page should set user name field with expected value",
-          "duration": 0.1,
+          "duration": 0.08,
           "error": null
         },
         {
           "status": 1,
           "title": "should set password field with expected value",
           "fullTitle": "Test started... testing of login page should set password field with expected value",
-          "duration": 2.01,
+          "duration": 0.1,
           "error": null
         },
         {
           "status": 1,
           "title": "should change the url on submit",
           "fullTitle": "Test started... testing of login page should change the url on submit",
-          "duration": 0.29,
+          "duration": 0.26,
           "error": null
         }
       ],
@@ -47,9 +47,9 @@
         "tests": 5,
         "pending": 0,
         "failures": 0,
-        "duration": 3.14,
-        "timeStart": 1544176732559,
-        "timeStop": 1544176735703
+        "duration": 3.34,
+        "timeStart": 1544520078957,
+        "timeStop": 1544520082293
       }
     }
   ],
@@ -58,8 +58,8 @@
     "tests": 5,
     "pending": 0,
     "failures": 0,
-    "duration": 3.15,
-    "timeStart": 1544176732559,
-    "timeStop": 1544176735705
+    "duration": 3.34,
+    "timeStart": 1544520078957,
+    "timeStop": 1544520082295
   }
 }

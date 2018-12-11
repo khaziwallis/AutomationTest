@@ -1,10 +1,10 @@
 "use strict";
-var testSuites = require('../test-config/react-test-config');
+var testSuites = require('../test-config/ng-test-config');
 
 describe('Test started...', function () { 
     testSuites.forEach(function (testSuite) {
         describe(testSuite.describeStatement, function () {
-            before(function () {
+            before(function() {
                 browser.driver.get(testSuite.url);
           });
             testSuite.expectedTests.forEach(function (testCase) {
@@ -20,33 +20,22 @@ describe('Test started...', function () {
                         action: will expection different action, based on input in suite
                         output: javascript DOM element against which validation need to be performed
                     */
-                    if (testCase.setValue) {
-                        testObj.sendKeys(testCase.setValue);
-                    }
-                    if (testCase.action) {
-                        if (testCase.action === 'click') {
-                            testObj.click();
-                        }
-                    }
-
-                    if (testCase.scope === 'browser') {
-                        testObj = browser;
-                    }
+                   
+                   testObj = action.processActions(testCase, testObj, browser);
                     
-                    /* expect module: will perform validation
+                    /*ss expect module: will perform validation
                         input: javascript DOM element against which validation need to be perfomed based on suite
                     */
                    
                     if (testCase.expected) {
                         expect(testObj.getText()).to.eventually.eql(testCase.expected);
-                    } else if (testCase.expectedAttributeValue) {
+                    } else if(testCase.expectedAttributeValue) {
                         expect(testObj.getAttribute(testCase.attribute)).to.eventually.eql(testCase.expectedAttributeValue);
-                    } else if (testCase.expectedBrowserValue) {
+                    } else if(testCase.expectedBrowserValue) {
                         expect(testObj[testCase.method]()).to.eventually.eql(testCase.expectedBrowserValue);
                     }
                 });
             });
         });
     });
-
 });
