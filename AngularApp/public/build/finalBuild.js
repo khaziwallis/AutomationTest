@@ -142,7 +142,7 @@ var app = angular.module('app');
 app.controller('LoginController', function ($scope, $location, loginService) {
 	$scope.errorStatus = false;
 	$scope.login = function () {
-		loginService.login({}, {
+		loginService.login({
 			userName: $scope.userName,
 			password: $scope.password
 
@@ -168,7 +168,10 @@ app.config(['$resourceProvider', function ($resourceProvider) {
 }]);
 
 app.factory('loginService', function ($resource) {
-  return $resource("http://localhost:3000/api/login", {} , {
+  return $resource("http://localhost:3000/api/login", {
+    userName: '@userName',
+    password: '@password'
+  } , {
       login: {
           method: 'POST',
           isArray: false,

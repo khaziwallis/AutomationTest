@@ -5,7 +5,10 @@ app.config(['$resourceProvider', function ($resourceProvider) {
 }]);
 
 app.factory('loginService', function ($resource) {
-  return $resource("http://localhost:3000/api/login", {} , {
+  return $resource("http://localhost:3000/api/login", {
+    userName: '@userName',
+    password: '@password'
+  } , {
       login: {
           method: 'POST',
           isArray: false,

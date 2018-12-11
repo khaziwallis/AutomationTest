@@ -7,14 +7,14 @@
         body: '{"items": [{"name": "vinay","id": "vinay123"}, {"name": "shant","id": "shant123"}]}'
 
 -   request:
-        url: ^/api/login$
+        url: ^/api/login
         method: POST
         post: '{"userName":"accion","password":"failure"}'
     response:
         status: 500
 
 -   request:
-        url: ^/api/login$
+        url: ^/api/login
         method: POST
         post: '{"userName":"accion","password":"success"}'
     response:

@@ -11,7 +11,7 @@
   },
   {
     "request": {
-      "url": "^/api/login$",
+      "url": "^/api/login",
       "method": "POST",
       "post": "{\"userName\":\"accion\",\"password\":\"failure\"}"
     },
@@ -21,7 +21,7 @@
   },
   {
     "request": {
-      "url": "^/api/login$",
+      "url": "^/api/login",
       "method": "POST",
       "post": "{\"userName\":\"accion\",\"password\":\"success\"}"
     },
