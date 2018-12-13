@@ -1,65 +1,86 @@
 {
   "title": "Test started...",
-  "file": "/media/shanthkg/00CC84A0CC849198/Users/shanth/AutomationTest/TestFramework/stories/test.spec.js",
+  "file": "/media/vinay/94108E80108E68D6/Training/AutomationTest/TestFramework/stories/test.spec.js",
   "suites": [
     {
       "title": "testing of login page",
-      "file": "/media/shanthkg/00CC84A0CC849198/Users/shanth/AutomationTest/TestFramework/stories/test.spec.js",
+      "file": "/media/vinay/94108E80108E68D6/Training/AutomationTest/TestFramework/stories/test.spec.js",
       "suites": [],
       "tests": [
         {
           "status": 1,
-          "title": "should have expected user name label",
-          "fullTitle": "Test started... testing of login page should have expected user name label",
-          "duration": 0.06,
+          "title": "should change the url and go to register page",
+          "fullTitle": "Test started... testing of login page should change the url and go to register page",
+          "duration": 0.41,
           "error": null
         },
         {
           "status": 1,
-          "title": "should have expected password label",
-          "fullTitle": "Test started... testing of login page should have expected password label",
-          "duration": 0.03,
+          "title": "should set first name field with expected value",
+          "fullTitle": "Test started... testing of login page should set first name field with expected value",
+          "duration": 0.16,
           "error": null
         },
         {
           "status": 1,
-          "title": "should set user name field with expected value",
-          "fullTitle": "Test started... testing of login page should set user name field with expected value",
-          "duration": 0.08,
+          "title": "should set last name field with expected value",
+          "fullTitle": "Test started... testing of login page should set last name field with expected value",
+          "duration": 0.14,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should change the url and go back to login page",
+          "fullTitle": "Test started... testing of login page should change the url and go back to login page",
+          "duration": 0.35,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should set email with expected value",
+          "fullTitle": "Test started... testing of login page should set email with expected value",
+          "duration": 0.1,
           "error": null
         },
         {
           "status": 1,
           "title": "should set password field with expected value",
           "fullTitle": "Test started... testing of login page should set password field with expected value",
-          "duration": 0.1,
+          "duration": 0.12,
           "error": null
         },
         {
           "status": 1,
           "title": "should change the url on submit",
           "fullTitle": "Test started... testing of login page should change the url on submit",
-          "duration": 0.26,
+          "duration": 0.34,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should change the url on logout",
+          "fullTitle": "Test started... testing of login page should change the url on logout",
+          "duration": 0.33,
           "error": null
         }
       ],
       "stats": {
-        "tests": 5,
+        "tests": 8,
         "pending": 0,
         "failures": 0,
-        "duration": 3.34,
-        "timeStart": 1544520078957,
-        "timeStop": 1544520082293
+        "duration": 9.02,
+        "timeStart": 1544692787373,
+        "timeStop": 1544692796397
       }
     }
   ],
   "tests": [],
   "stats": {
-    "tests": 5,
+    "tests": 8,
     "pending": 0,
     "failures": 0,
-    "duration": 3.34,
-    "timeStart": 1544520078957,
-    "timeStop": 1544520082295
+    "duration": 9.03,
+    "timeStart": 1544692787372,
+    "timeStop": 1544692796399
   }
 }

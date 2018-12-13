@@ -1,41 +1,45 @@
 "use strict";
-var testSuites = require('../test-config/ng-test-config');
+var testSuites = require("../test-config/angular6-test-config");
 
-describe('Test started...', function () { 
-    testSuites.forEach(function (testSuite) {
-        describe(testSuite.describeStatement, function () {
-            before(function() {
-                browser.driver.get(testSuite.url);
-          });
-            testSuite.expectedTests.forEach(function (testCase) {
-                it(testCase.message, function () {
-                    /* initialization module: will initialize javascript DOM object
+describe("Test started...", function() {
+  testSuites.forEach(function(testSuite) {
+    describe(testSuite.describeStatement, function() {
+      before(function() {
+        browser.driver.get(testSuite.url);
+      });
+      testSuite.expectedTests.forEach(function(testCase) {
+        it(testCase.message, function() {
+          /* initialization module: will initialize javascript DOM object
                         input: test hook on html which need to be accessed as javascript DOM element
                         output: will return javascript DOM element
                     */
-                    var testObj = initlize.getTestObj(testCase.testHook);
+          var testObj = initlize.getTestObj(testCase.testHook);
 
-                    /* action module: will perform all pre actions before expect statement
+          /* action module: will perform all pre actions before expect statement
                         input: javascript DOM element, on which action need to be performed
                         action: will expection different action, based on input in suite
                         output: javascript DOM element against which validation need to be performed
                     */
-                   
-                   testObj = action.processActions(testCase, testObj, browser);
-                    
-                    /*ss expect module: will perform validation
+
+          testObj = action.processActions(testCase, testObj, browser);
+
+          /*ss expect module: will perform validation
                         input: javascript DOM element against which validation need to be perfomed based on suite
                     */
-                   
-                    if (testCase.expected) {
-                        expect(testObj.getText()).to.eventually.eql(testCase.expected);
-                    } else if(testCase.expectedAttributeValue) {
-                        expect(testObj.getAttribute(testCase.attribute)).to.eventually.eql(testCase.expectedAttributeValue);
-                    } else if(testCase.expectedBrowserValue) {
-                        expect(testObj[testCase.method]()).to.eventually.eql(testCase.expectedBrowserValue);
-                    }
-                });
-            });
+
+          if (testCase.expected) {
+            expect(testObj.getText()).to.eventually.eql(testCase.expected);
+          } else if (testCase.expectedAttributeValue) {
+            expect(testObj.getAttribute(testCase.attribute)).to.eventually.eql(
+              testCase.expectedAttributeValue
+            );
+          } else if (testCase.expectedBrowserValue) {
+            expect(testObj[testCase.method]()).to.eventually.eql(
+              testCase.expectedBrowserValue
+            );
+          }
         });
+      });
     });
+  });
 });
