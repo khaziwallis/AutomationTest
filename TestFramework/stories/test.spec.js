@@ -1,5 +1,5 @@
 "use strict";
-var testSuites = require("../test-config/angular6-test-config");
+var testSuites = require("../test-config/ng-test-config");
 
 describe("Test started...", function() {
   testSuites.forEach(function(testSuite) {
