@@ -4,17 +4,23 @@ module.exports = [
     describeStatement: "testing of login page",
     expectedTests: [
       {
-        testHook: "userNameLbl",
+        testHook: {
+          name: "ClassName",
+          value: "userNameLbl"
+        },
         message: "should have expected user name label",
         expected: "User Name"
       },
       {
-        testHook: "passwordLbl",
+        testHook: {
+          name: "ClassName",
+          value: "passwordLbl"
+        },
         message: "should have expected password label",
         expected: "Password"
       },
       {
-        testHook: "userName",
+        testHook: {},
         message: "should set user name field with expected value",
         setValue: "accion",
         attribute: "value",

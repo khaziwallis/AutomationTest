@@ -2,7 +2,10 @@ module.exports = [{
         url: 'http://localhost:9000',
         describeStatement: 'testing of login page',
         expectedTests: [{
-            testHook: 'userNameLbl',
+            testHook: {
+             name: 'class',
+             value: 'userNameLbl'
+            },
             message: 'should have expected user name label',
             expected: 'Username'
         }, {
@@ -20,7 +23,7 @@ module.exports = [{
             message: 'should set password field with expected value',
             setValue: 'success',
             attribute: 'value',
-            expectedAttributeValue: 'success'
+            expectedAttributeValue: 'success',
         }, {
             testHook: 'submitBtn',
             message: 'should change the url on submit',

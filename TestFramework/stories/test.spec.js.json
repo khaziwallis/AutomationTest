@@ -11,97 +11,55 @@
           "status": 1,
           "title": "should have expected user name label",
           "fullTitle": "Test started... testing of login page should have expected user name label",
-          "duration": 0.05,
+          "duration": 0.04,
           "error": null
         },
         {
           "status": 1,
           "title": "should have expected password label",
           "fullTitle": "Test started... testing of login page should have expected password label",
-          "duration": 0.03,
+          "duration": 0.02,
           "error": null
         },
         {
           "status": 1,
           "title": "should set user name field with expected value",
           "fullTitle": "Test started... testing of login page should set user name field with expected value",
-          "duration": 0.12,
+          "duration": 0.08,
           "error": null
         },
         {
           "status": 1,
           "title": "should set password field with expected value",
           "fullTitle": "Test started... testing of login page should set password field with expected value",
-          "duration": 0.1,
+          "duration": 0.08,
           "error": null
         },
         {
           "status": 1,
           "title": "should change the url on submit",
           "fullTitle": "Test started... testing of login page should change the url on submit",
-          "duration": 0.28,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should delete a user to the table",
-          "fullTitle": "Test started... testing of login page should delete a user to the table",
-          "duration": 0.26,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should search for user in the table",
-          "fullTitle": "Test started... testing of login page should search for user in the table",
-          "duration": 0.23,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should search for user in the table",
-          "fullTitle": "Test started... testing of login page should search for user in the table",
-          "duration": 0.07,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should add a user to the table",
-          "fullTitle": "Test started... testing of login page should add a user to the table",
-          "duration": 0.31,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should set name field with expected value",
-          "fullTitle": "Test started... testing of login page should set name field with expected value",
-          "duration": 0.13,
-          "error": null
-        },
-        {
-          "status": 1,
-          "title": "should set city field with expected value",
-          "fullTitle": "Test started... testing of login page should set city field with expected value",
-          "duration": 0.07,
+          "duration": 0.25,
           "error": null
         }
       ],
       "stats": {
-        "tests": 11,
+        "tests": 5,
         "pending": 0,
         "failures": 0,
-        "duration": 2.24,
-        "timeStart": 1546927460932,
-        "timeStop": 1546927463172
+        "duration": 1.05,
+        "timeStart": 1546934392132,
+        "timeStop": 1546934393178
       }
     }
   ],
   "tests": [],
   "stats": {
-    "tests": 11,
+    "tests": 5,
     "pending": 0,
     "failures": 0,
-    "duration": 2.24,
-    "timeStart": 1546927460932,
-    "timeStop": 1546927463175
+    "duration": 1.05,
+    "timeStart": 1546934392132,
+    "timeStop": 1546934393181
   }
 }
