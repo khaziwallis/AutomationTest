@@ -18,4 +18,3 @@ module.exports.processActions  = function(testCase, testObj, browser) {
 
     return processedObj;
  }
-
