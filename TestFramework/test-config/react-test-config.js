@@ -40,43 +40,43 @@ module.exports = [
         scope: "browser",
         method: "getCurrentUrl",
         expectedBrowserValue: "http://localhost:3001/home"
-      },
-      {
-        testHook: "deleteUser",
-        message: "should delete a user to the table",
-        action: "click"
-      },
-      {
-        testHook: "searchName",
-        message: "should search for user in the table",
-        action: "click"
-      },
-      {
-        testHook: "searchName",
-        message: "should search for user in the table",
-        setValue: "Vinay",
-        attribute: "value",
-        expectedAttributeValue: "Vinay"
-      },
-      {
-        testHook: "addUser",
-        message: "should add a user to the table",
-        action: "click"
-      },
-      {
-        testHook: "newName",
-        message: "should set name field with expected value",
-        setValue: "Vinay",
-        attribute: "value",
-        expectedAttributeValue: "Vinay"
-      },
-      {
-        testHook: "newCity",
-        message: "should set city field with expected value",
-        setValue: "Bengaluru",
-        attribute: "value",
-        expectedAttributeValue: "Bengaluru"
       }
+      // {
+      //   testHook: "deleteUser",
+      //   message: "should delete a user to the table",
+      //   action: "click"
+      // },
+      // {
+      //   testHook: "searchName",
+      //   message: "should search for user in the table",
+      //   action: "click"
+      // },
+      // {
+      //   testHook: "searchName",
+      //   message: "should search for user in the table",
+      //   setValue: "Vinay",
+      //   attribute: "value",
+      //   expectedAttributeValue: "Vinay"
+      // },
+      // {
+      //   testHook: "addUser",
+      //   message: "should add a user to the table",
+      //   action: "click"
+      // },
+      // {
+      //   testHook: "newName",
+      //   message: "should set name field with expected value",
+      //   setValue: "Vinay",
+      //   attribute: "value",
+      //   expectedAttributeValue: "Vinay"
+      // },
+      // {
+      //   testHook: "newCity",
+      //   message: "should set city field with expected value",
+      //   setValue: "Bengaluru",
+      //   attribute: "value",
+      //   expectedAttributeValue: "Bengaluru"
+      // }
       // {
       //   testHook: "logoutBtn",
       //   message: "should change the url on logout",
