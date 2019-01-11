@@ -13,14 +13,17 @@ module.exports = [
       },
       {
         testHook: {
-          name: "ClassName",
-          value: "passwordLbl"
+          name: "TagName",
+          value: "#form-layout"
         },
         message: "should have expected password label",
         expected: "Password"
       },
       {
-        testHook: {},
+        testHook: {
+          name: "IdName",
+          value: "userNameId"
+        },
         message: "should set user name field with expected value",
         setValue: "accion",
         attribute: "value",

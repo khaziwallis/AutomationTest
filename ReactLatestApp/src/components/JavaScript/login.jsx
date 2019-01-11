@@ -71,13 +71,14 @@ class LoginPage extends Component {
           <label className="userNameLbl">User Name</label>
           <input
             className=" userName form-control"
+            id="userNameId"
             type="text"
             value={this.state.username}
             onChange={this.handleUserChange}
             data-test-hook="userName"
           />
 
-          <label id="passwordLbl">Password</label>
+          <label>Password</label>
           <input
             className="password form-control"
             type="password"
