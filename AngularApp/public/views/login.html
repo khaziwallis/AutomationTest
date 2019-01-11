@@ -2,10 +2,10 @@
   <div class="card-layout">
     <h1 class="login-heading"><span class="login-color">Login </span>here!</h1>
       <form id="loginForm" action="/">
-       <label data-test-hook="userNameLbl">Username</label> 
+       <label class="userNameLbl"><span>Username</span></label> 
        <input data-test-hook="userName" type="text" id="username" class="usrname" ng-model="userName"><br>
-       <label data-test-hook="passwordLbl">Password</label>
-       <input data-test-hook="password" type="password" id="password" class="password" ng-model = "password"><br>
+       <labe><span>Password</span></label>
+       <input type="password" id="password" class="password" ng-model = "password"><br>
        <span data-test-hook="errorMsg" class="warning" ng-if = "errorStatus">Sorry, your credentials don't match!</span>
        <button data-test-hook="submitBtn" type="button" class="btn" ng-click = "login()">Submit</button>
        </form>
