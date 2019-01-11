@@ -68,18 +68,19 @@ class LoginPage extends Component {
       <div className="Login">
         <form onSubmit={this.handleSubmit} className="form-layout">
           <span className="mb-5">Please Login !!</span>
-          <label data-test-hook="userNameLbl">User Name</label>
+          <label className="userNameLbl">User Name</label>
           <input
-            className=" input-1 form-control"
+            className=" userName form-control"
+            id="userNameId"
             type="text"
             value={this.state.username}
             onChange={this.handleUserChange}
             data-test-hook="userName"
           />
 
-          <label data-test-hook="passwordLbl">Password</label>
+          <label>Password</label>
           <input
-            className="input-2 form-control"
+            className="password form-control"
             type="password"
             value={this.state.password}
             onChange={this.handlePassChange}
@@ -89,23 +90,26 @@ class LoginPage extends Component {
           <button
             type="submit"
             value="Log In"
-            className="btn btn-primary submit"
+            className="btn btn-primary submitBtn"
             data-test-hook="submitBtn"
           >
             <h3>{"Log In "}</h3>
           </button>
           {this.state.error && (
             <div>
-              <h3 data-test-hook="errorMsg"
+              <h3
+                data-test-hook="errorMsg"
                 onClick={this.dismissError}
-                className="error-msg">
+                className="error-msg"
+              >
                 {this.state.error}
               </h3>
               <button
                 data-test-hook="submitBtn"
                 className="btn btn-danger btn-sm dismiss-error"
                 type="button"
-                onClick={this.handleSubmit}>
+                onClick={this.handleSubmit}
+              >
                 Submit
               </button>
             </div>

@@ -1,48 +1,50 @@
 {
   "title": "Test started...",
-  "file": "/media/shanthkg/00CC84A0CC849198/Users/shanth/AutomationTest/TestFramework/stories/test.spec.js",
+  "file": "/media/vinay/94108E80108E68D6/Training/AutomationTest/TestFramework/stories/test.spec.js",
   "suites": [
     {
       "title": "testing of login page",
-      "file": "/media/shanthkg/00CC84A0CC849198/Users/shanth/AutomationTest/TestFramework/stories/test.spec.js",
+      "file": "/media/vinay/94108E80108E68D6/Training/AutomationTest/TestFramework/stories/test.spec.js",
       "suites": [],
       "tests": [
         {
-          "status": 0,
+          "status": 1,
           "title": "should have expected user name label",
           "fullTitle": "Test started... testing of login page should have expected user name label",
-          "duration": 0.01,
-          "error": {
-            "stack": "TypeError: name.split is not a function\n    at ProtractorBy.className (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/by.js:138:22)\n    at Object.getByClassName (pages/initilize.page.js:22:40)\n    at Object.getTestObj (pages/initilize.page.js:8:16)\n    at Context.<anonymous> (stories/test.spec.js:16:34)\n    at runTest (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:163:22)\n    at /usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:184:16\n    at new ManagedPromise (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1077:7)\n    at controlFlowExecute (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:183:14)\n    at TaskQueue.execute_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)\n    at TaskQueue.executeNext_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3067:27)\nFrom: Task: Test started... testing of login page should have expected user name label\n    at Context.ret (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:182:10)",
-            "message": "name.split is not a function"
-          }
+          "duration": 0.06,
+          "error": null
         },
         {
-          "status": 1,
+          "status": 0,
           "title": "should have expected password label",
           "fullTitle": "Test started... testing of login page should have expected password label",
-          "duration": 0.12,
-          "error": null
+          "duration": 0.02,
+          "error": {
+            "stack": "NoSuchElementError: No element found using locator: By(css selector, #form-layout)\n    at elementArrayFinder.getWebElements.then (/usr/lib/node_modules/protractor/built/element.js:814:27)\n    at ManagedPromise.invokeCallback_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1376:14)\n    at TaskQueue.execute_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)\n    at TaskQueue.executeNext_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3067:27)\n    at asyncRun (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2927:27)\n    at /usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:668:7\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:189:7)Error\n    at ElementArrayFinder.applyAction_ (/usr/lib/node_modules/protractor/built/element.js:459:27)\n    at ElementArrayFinder.(anonymous function).args [as getText] (/usr/lib/node_modules/protractor/built/element.js:91:29)\n    at Object.getTestObj (pages/initilize.page.js:9:55)\n    at Context.<anonymous> (stories/test.spec.js:16:34)\n    at runTest (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:163:22)\n    at /usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:184:16\n    at new ManagedPromise (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1077:7)\n    at controlFlowExecute (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:183:14)\n    at TaskQueue.execute_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)\n    at TaskQueue.executeNext_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3067:27)\nFrom: Task: WebDriver.findElement(By(css selector, [object Object]))\n    at thenableWebDriverProxy.schedule (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.findElement (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver.js:1014:17)\n    at Object.getByTagName (pages/initilize.page.js:26:27)\n    at Object.getTestObj (pages/initilize.page.js:9:19)\n    at Context.<anonymous> (stories/test.spec.js:16:34)\n    at runTest (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:163:22)\n    at /usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:184:16\n    at new ManagedPromise (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1077:7)\n    at controlFlowExecute (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:183:14)\n    at TaskQueue.execute_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)\nFrom: Task: WebElement.getText()\n    at thenableWebDriverProxy.schedule (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at WebElementPromise.schedule_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver.js:2010:25)\n    at WebElementPromise.getText (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver.js:2277:17)\n    at Context.<anonymous> (stories/test.spec.js:31:28)\n    at runTest (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:163:22)\n    at /usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:184:16\n    at new ManagedPromise (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1077:7)\n    at controlFlowExecute (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:183:14)\n    at TaskQueue.execute_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)\n    at TaskQueue.executeNext_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3067:27)\nFrom: Task: Test started... testing of login page should have expected password label\n    at Context.ret (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:182:10)",
+            "message": "No element found using locator: By(css selector, #form-layout)",
+            "name": "NoSuchElementError",
+            "remoteStacktrace": ""
+          }
         },
         {
           "status": 1,
           "title": "should set user name field with expected value",
           "fullTitle": "Test started... testing of login page should set user name field with expected value",
-          "duration": 0.06,
+          "duration": 0.14,
           "error": null
         },
         {
           "status": 1,
           "title": "should set password field with expected value",
           "fullTitle": "Test started... testing of login page should set password field with expected value",
-          "duration": 0.11,
+          "duration": 0.08,
           "error": null
         },
         {
           "status": 1,
           "title": "should change the url on submit",
           "fullTitle": "Test started... testing of login page should change the url on submit",
-          "duration": 0.25,
+          "duration": 0.26,
           "error": null
         }
       ],
@@ -50,9 +52,9 @@
         "tests": 5,
         "pending": 0,
         "failures": 1,
-        "duration": 0.88,
-        "timeStart": 1546863111377,
-        "timeStop": 1546863112258
+        "duration": 1.12,
+        "timeStart": 1547204046183,
+        "timeStop": 1547204047306
       }
     }
   ],
@@ -61,8 +63,8 @@
     "tests": 5,
     "pending": 0,
     "failures": 1,
-    "duration": 0.88,
-    "timeStart": 1546863111376,
-    "timeStop": 1546863112260
+    "duration": 1.13,
+    "timeStart": 1547204046183,
+    "timeStop": 1547204047308
   }
 }
