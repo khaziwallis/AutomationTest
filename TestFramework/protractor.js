@@ -14,6 +14,7 @@ exports.setupTestGlobals = () => {
   configurations = require("./pages/configurations.page");
   initlize = require("./pages/initilize.page");
   action = require("./pages/actions.page");
+  expected = require("./pages/expected.page");
 };
 
 exports.config = {
@@ -45,7 +46,7 @@ exports.config = {
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
-    browserName: "firefox"
+    browserName: "chrome"
   },
 
   mochaOpts: {

@@ -1,34 +1,43 @@
 module.exports = Object.create({
-  getTestObj: function(testHook) {
-    if (testHook.name === "IdName") {
-      return this.getByIdName(testHook.value);
-    } else if (testHook.name === "ClassName") {
-      return this.getByClassName(testHook.value);
-    } else if (testHook.name === "TagName") {
-      const classValue = $(testHook.value);
-      return this.getByTagName(classValue.$$("label").getText());
-    } else {
-      return this.getByAttribute("data-test-hook", testHook);
-    }
-  },
+	getTestObj: function (testHook) {
+		if (testHook.type === 'attribute') {
+			return this.getTestObjByAttribute(testHook.name, testHook.value, testHook.indexValue);
+			//return browser.driver.findElement(by.css('[data-test-hook="'+ testHook.value +'"]'));
+		} else if (testHook.type === 'class') {
+			return this.getTestObjByClass(testHook.name, testHook.value, testHook.indexValue);
+		} else if (testHook.type === 'tag') {
+			return this.getTestObjByTag(testHook.name, testHook.value, testHook.indexValue);
+		} else if (testHook.type === 'xpath') {
+			return this.getTestObjByXPath(testHook.name, testHook.value, testHook.indexValue);
+		}
+		debug;
+		return 'NaTestObj';
+	},
+	getTestObjByAttribute:  function (name, value, indexValue) {
+		if (indexValue === 'all') {
+			return $$('[' + name + '="'+ value +'"]');
+		}
+		return $$('['+ name +'="'+ value +'"]').get(indexValue);
+	},
 
-  //Select tag name by a method findElement using one of the location strategies i.e tagName()
-  getByIdName: function(idName) {
-    return browser.driver.findElement(By.id(idName));
-  },
+	getTestObjByTag: function (name, value, indexValue) {
+		if (indexValue === 'all') {
+			return $$(''+ value);
+		}
+		return $$(''+ value).get(indexValue);
+	},
 
-  //Select class name by a method findElement using one of the location strategies i.e className()
-  getByClassName: function(className) {
-    return browser.driver.findElement(By.className(className));
-  },
+	getTestObjByXPath: function (name, value, indexValue) {
+		if (indexValue === 'all') {
+			return $$(''+ value);
+		}
+		return $$(''+ value).get(indexValue);	
+	},
 
-  getByTagName: function(tagName) {
-    return browser.driver.findElement(By.tagName(tagName));
-  },
-
-  getByAttribute: function(attributeName, attributeValue) {
-    return browser.driver.findElement(
-      By.css("[" + attributeName + '="' + attributeValue + '"]')
-    );
-  }
+	getTestObjByClass:  function (name, value, indexValue) {
+		if (indexValue === 'all') {
+			return $$('.' + value);
+		}
+		return $$('.' + value).get(indexValue);
+	}
 });

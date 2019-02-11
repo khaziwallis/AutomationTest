@@ -74,49 +74,20 @@ module.exports = [{
             value: 'Password'
         }
     }, {
-        message: 'should set user name field with expected value',
+        message: 'should update text fields and submit to login',
         testHook: {
-            'name': 'data-test-hook',
-            'type': 'attribute',
-            'value': 'user-name-field',
+            'name': 'form',
+            'type': 'tag',
+            'value': 'form',
             indexValue: 0
         },
         action: {
-            type: 'sendKeys', //update, click
-            value: 'accion'
-        },
-        expected: {
-            scope: 'current',
-            value: 'accion',
-            attribute: 'value'
-        }
-    }, {
-        message: 'should set password field with expected value',
-        testHook: {
-            'name': 'data-test-hook',
-            'type': 'attribute',
-            'value': 'user-password-field',
-            indexValue: 0
-        },
-        action: {
-            type: 'sendKeys',
-            value: 'success'
-        },
-        expected: {
-            scope: 'current',
-            value: 'success',
-            attribute: 'value'
-        }
-    }, {
-        message: 'should change the url on submit',
-        testHook: {
-            'name': 'data-test-hook',
-            'type': 'attribute',
-            'value': 'submitBtn',
-            indexValue: 0
-        },
-        action: {
-            type: 'click'
+            type: 'custom',
+            customFunction: function (testObj) {
+                testObj.$('[data-test-hook="user-password-field"]').sendKeys('success');
+                testObj.$('[data-test-hook="user-name-field"]').sendKeys('accion');
+                testObj.$('[data-test-hook="submitBtn"]').click();
+            }
         },
         expected: {
             scope: 'browser',

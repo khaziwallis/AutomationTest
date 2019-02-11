@@ -1,13 +1,13 @@
 <div class = "login-layout">
   <div class="card-layout">
     <h1 class="login-heading"><span class="login-color">Login </span>here!</h1>
-      <form id="loginForm" action="/">
-       <label class="userNameLbl"><span>Username</span></label> 
-       <input data-test-hook="userName" type="text" id="username" class="usrname" ng-model="userName"><br>
-       <labe><span>Password</span></label>
-       <input type="password" id="password" class="password" ng-model = "password"><br>
-       <span data-test-hook="errorMsg" class="warning" ng-if = "errorStatus">Sorry, your credentials don't match!</span>
-       <button data-test-hook="submitBtn" type="button" class="btn" ng-click = "login()">Submit</button>
-       </form>
+    <form id="loginForm" action="/">
+      <label class="userNameLbl" data-test-hook="user-name-lbl"><span>Username</span></label> 
+      <input data-test-hook="user-name-field" type="text" id="username" class="usrname" ng-model="userName"><br>
+      <label data-test-hook="user-password-lbl"><span>Password</span></label>
+      <input type="password" data-test-hook="user-password-field" id="password" class="password" ng-model = "password"><br>
+      <span data-test-hook="errorMsg" class="warning" ng-if = "errorStatus">Sorry, your credentials don't match!</span>
+      <button data-test-hook="submitBtn" type="button" class="btn" ng-click = "login()">Submit</button>
+      </form>
   </div>
 </div>

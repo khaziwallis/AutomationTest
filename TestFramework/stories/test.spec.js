@@ -1,5 +1,5 @@
 "use strict";
-var testSuites = require("../test-config/react-test-config");
+var testSuites = require("../test-config/aic");
 
 describe("Test started...", function() {
   testSuites.forEach(function(testSuite) {
@@ -10,33 +10,33 @@ describe("Test started...", function() {
       testSuite.expectedTests.forEach(function(testCase) {
         it(testCase.message, function() {
           /* initialization module: will initialize javascript DOM object
-                        input: test hook on html which need to be accessed as javascript DOM element
-                        output: will return javascript DOM element
-                    */
-          var testObj = initlize.getTestObj(testCase.testHook);
-
-          /* action module: will perform all pre actions before expect statement
-                        input: javascript DOM element, on which action need to be performed
-                        action: will expection different action, based on input in suite
-                        output: javascript DOM element against which validation need to be performed
-                    */
-
-          testObj = action.processActions(testCase, testObj, browser);
-
-          /*ss expect module: will perform validation
-                        input: javascript DOM element against which validation need to be perfomed based on suite
-                    */
-
-          if (testCase.expected) {
-            expect(testObj.getText()).to.eventually.eql(testCase.expected);
-          } else if (testCase.expectedAttributeValue) {
-            expect(testObj.getAttribute(testCase.attribute)).to.eventually.eql(
-              testCase.expectedAttributeValue
-            );
-          } else if (testCase.expectedBrowserValue) {
-            expect(testObj[testCase.method]()).to.eventually.eql(
-              testCase.expectedBrowserValue
-            );
+            input: test hook on html which need to be accessed as javascript DOM element
+            output: will return javascript DOM element
+          */
+          if (testCase.testHook) {
+            var testObj = initlize.getTestObj(testCase.testHook);
+          }
+          if (testObj === 'NaTestObj') {
+            console.log('accessor not configured properly: ', testCase.testHook);
+          } else {
+            /* action module: will perform all pre actions before expect statement
+              input: javascript DOM element, on which action need to be performed
+              action: will expection different action, based on input in suite
+              output: javascript DOM element against which validation need to be performed
+            */
+            if (testCase.action) {
+              testObj = action.processActions(testCase.action, testObj, browser, expect);
+            }
+            /* expect module: will perform all expect checks
+              input: javascript DOM element, and chai expect
+              action: will validate all the given expects
+            */
+            if (testCase.expected) {
+              let result = expected.expectResult(testCase.expected, testObj, expect, browser);
+              if (result === 'NaExpect') {
+                console.log('action and expect not configured properly: ', testCase.testHook); 
+              }
+            }
           }
         });
       });

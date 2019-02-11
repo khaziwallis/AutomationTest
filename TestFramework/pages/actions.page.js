@@ -1,21 +1,10 @@
-module.exports.processActions  = function(testCase, testObj, browser) { 
-   var processedObj;
-   if (testCase.setValue) {
-     testObj.sendKeys(testCase.setValue);
-     }
-
-     if (testCase.action) {
-       if (testCase.action === 'click') {
-        testObj.click();
-       }
-     }
- 
-    if (testCase.scope === 'browser') {
-      processedObj = browser;
-    } else {
-      processedObj = testObj;
-    }
-
-    return processedObj;
- }
-
+module.exports.processActions  = function(action, testObj, browser, expect) { 
+  if (action.type === 'custom') {
+    action.customFunction(testObj);
+  } else if (action.type === 'sendKeys') {
+    testObj.sendKeys(action.value);
+  } else if (action.type === 'click') {
+    testObj.click();
+  }
+  return testObj;
+}
