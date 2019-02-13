@@ -1,5 +1,5 @@
 "use strict";
-var testSuites = require("../test-config/aic");
+var testSuites = require("../test-config/flipkart");
 
 describe("Test started...", function() {
   testSuites.forEach(function(testSuite) {
@@ -9,6 +9,9 @@ describe("Test started...", function() {
       });
       testSuite.expectedTests.forEach(function(testCase) {
         it(testCase.message, function() {
+          if (testCase.browserRefresh) {
+            browser.driver.navigate().refresh()
+          }
           /* initialization module: will initialize javascript DOM object
             input: test hook on html which need to be accessed as javascript DOM element
             output: will return javascript DOM element

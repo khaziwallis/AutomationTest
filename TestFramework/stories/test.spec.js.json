@@ -18,41 +18,69 @@
           "status": 1,
           "title": "should have expected input button",
           "fullTitle": "Test started... testing of Flipkart portal should have expected input button",
-          "duration": 0.06,
+          "duration": 0.05,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should have expected title in modal",
+          "fullTitle": "Test started... testing of Flipkart portal should have expected title in modal",
+          "duration": 0.1,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should have expected message in modal",
+          "fullTitle": "Test started... testing of Flipkart portal should have expected message in modal",
+          "duration": 0.05,
           "error": null
         },
         {
           "status": 1,
           "title": "should have expected close button",
           "fullTitle": "Test started... testing of Flipkart portal should have expected close button",
-          "duration": 0.17,
+          "duration": 0.13,
           "error": null
         },
         {
           "status": 1,
           "title": "should have expected search box.",
           "fullTitle": "Test started... testing of Flipkart portal should have expected search box.",
-          "duration": 0.27,
+          "duration": 0.21,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should have expected Login and Signup test",
+          "fullTitle": "Test started... testing of Flipkart portal should have expected Login and Signup test",
+          "duration": 5.7,
+          "error": null
+        },
+        {
+          "status": 1,
+          "title": "should have expected text on drop down",
+          "fullTitle": "Test started... testing of Flipkart portal should have expected text on drop down",
+          "duration": 0.07,
           "error": null
         }
       ],
       "stats": {
-        "tests": 4,
+        "tests": 8,
         "pending": 0,
         "failures": 0,
-        "duration": 4.5,
-        "timeStart": 1549899788595,
-        "timeStop": 1549899793097
+        "duration": 12.09,
+        "timeStart": 1550071758705,
+        "timeStop": 1550071770796
       }
     }
   ],
   "tests": [],
   "stats": {
-    "tests": 4,
+    "tests": 8,
     "pending": 0,
     "failures": 0,
-    "duration": 4.51,
-    "timeStart": 1549899788594,
-    "timeStop": 1549899793100
+    "duration": 12.09,
+    "timeStart": 1550071758705,
+    "timeStop": 1550071770799
   }
 }
